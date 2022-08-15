@@ -4,7 +4,7 @@
   <arg name="base_frame" default="base_link" />
   <arg name="odom_frame" default="odom" />
   <arg name="map_frame" default="map" />
-  <arg name="scan" default="RL/scan" />
+  <arg name="scan" default="scan/filtered" />
   <arg name="pointcloud_topic" default="lidar_crop" />
   <arg name="odom_topic" default="husky_velocity_controller/odom" />
 

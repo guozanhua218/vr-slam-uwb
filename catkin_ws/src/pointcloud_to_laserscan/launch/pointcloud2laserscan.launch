@@ -11,8 +11,8 @@
             <remap from="scan" to="/robot/RL/scan"/>
             <rosparam>
                 target_frame: velodyne_tmp
-                min_height: -0.75
-                max_height: 0.5
+                min_height: -0.1
+                max_height: 0.1
                 transform_tolerance: 0.01
                 angle_min: -2.094395
                 angle_max: 2.094395
@@ -26,7 +26,7 @@
                 # 0 : Detect number of cores
                 # 1 : Single threaded
                 # 2->inf : Parallelism level
-                concurrency_level: 0
+                concurrency_level: 2
             </rosparam>
         </node>
     </group>

@@ -79,3 +79,6 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     ros-$ROS_DISTRO-tf2-sensor-msgs \
     python-scipy \
     python3-scipy
+RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
+    && apt-get -o Acquire::ForceIPv4=true install -yq --no-install-recommends \
+    ros-melodic-cartographer

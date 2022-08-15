@@ -565,7 +565,7 @@
     name="velodyne_joint"
     type="fixed">
     <origin
-      xyz="0.12 0 0.485304161264951"
+      xyz="0.17 0 0.6"
       rpy="0 0 0" />
     <parent
       link="base_link" />
