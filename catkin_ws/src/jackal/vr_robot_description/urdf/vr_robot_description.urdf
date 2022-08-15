@@ -2,17 +2,17 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot name="guiding_robot_description">
+<robot name="vr_robot_description">
   <link name="velodyne">
     <inertial>
-      <origin xyz="-0.000204107711619175 -1.48435748332082E-05 -0.0110477585355708" rpy="0 0 0" />
+      <origin xyz="0.17 0 0.45" rpy="0 0 0" />
       <mass value="0.639680330048926" />
       <inertia ixx="0.000691066055083113" ixy="-1.30551476787178E-07" ixz="-1.91576696424982E-07" iyy="0.000681012953343301" iyz="1.31768757352229E-08" izz="0.000851613294109676" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://guiding_robot_description/meshes/velodyne_link.STL" />
+        <mesh filename="package://vr_robot_description/meshes/velodyne_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -21,12 +21,12 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://guiding_robot_description/meshes/velodyne_link.STL" />
+        <mesh filename="package://vr_robot_description/meshes/velodyne_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint name="velodyne_joint" type="fixed">
-    <origin xyz="0 0 0.0383041612649508" rpy="0 0 0" />
+    <origin xyz="0.17 0 0.45" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="velodyne" />
     <axis xyz="0 0 0" />
