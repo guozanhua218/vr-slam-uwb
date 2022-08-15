@@ -4,3 +4,6 @@
 [submodule "catkin_ws/src/jackal_robot"]
 	path = catkin_ws/src/jackal_robot
 	url = git@github.com:jackal/jackal_robot.git
+[submodule "Docker/catkin_ws/src/pointcloud_to_laserscan"]
+	path = Docker/catkin_ws/src/pointcloud_to_laserscan
+	url = git@github.com:ros-perception/pointcloud_to_laserscan.git
