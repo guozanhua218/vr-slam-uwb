@@ -6,7 +6,7 @@
   <!-- the following seems to work too when in devel space, but not in install_isolated -->
   <!-- <arg name="env_runner" value="env_run" /> -->
 
-  <arg name="urdf_extras" default="$(find guiding_robot_description)/urdf/guiding_robot_description.urdf" />
+  <arg name="urdf_extras" default="$(find vr_robot_description)/urdf/vr_robot_description.urdf" />
  
   <!-- <group ns="$(arg robot_namespace)"> -->
     <param name="robot_description"

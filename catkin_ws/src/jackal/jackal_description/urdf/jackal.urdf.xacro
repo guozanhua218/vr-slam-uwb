@@ -262,5 +262,5 @@
   <!-- Optional custom includes. -->
   <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />
 
-  <xacro:include filename="$(find guiding_robot_description)/urdf/guiding_robot_description.urdf" />
+  <xacro:include filename="$(find vr_robot_description)/urdf/vr_robot_description.urdf" />
 </robot>
