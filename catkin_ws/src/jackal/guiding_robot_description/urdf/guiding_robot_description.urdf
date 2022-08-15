@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="guiding_robot_description">
+  <!-- <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-3.53235615554127E-05 -2.30981132300666E-08 0.0849869466449101"
+        rpy="0 0 0" />
+      <mass
+        value="29.3158243796921" />
+      <inertia
+        ixx="0.291284682491588"
+        ixy="1.48255571798308E-07"
+        ixz="6.17649809616402E-05"
+        iyy="0.479826021180948"
+        iyz="1.88670550380389E-11"
+        izz="0.604707004013824" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link> -->
+  <link
+    name="guiding_base_link">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 1.2578919916488E-17 -0.002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0774232819293758" />
+      <inertia
+        ixx="0.000124479553965162"
+        ixy="7.31537854226584E-21"
+        ixz="-5.48631849508152E-23"
+        iyy="0.000124796231531192"
+        iyz="-2.35875721548326E-23"
+        izz="0.000249069323411208" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/guiding_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/guiding_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="guiding_base_joint"
+    type="fixed">
+    <origin
+      xyz="0.119790139391526 0 0.188"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="guiding_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_layer_link">
+    <inertial>
+      <origin
+        xyz="-0.0198105976186599 -2.39365952732998E-17 -0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="0.289831699286631" />
+      <inertia
+        ixx="0.00358702261685531"
+        ixy="6.63823072781326E-20"
+        ixz="1.93180194707348E-21"
+        iyy="0.00153962974139162"
+        iyz="2.41080451229366E-21"
+        izz="0.00512544472616656" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_layer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_layer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_layer_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="guiding_base_link" />
+    <child
+      link="mmwave_layer_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_layer_link">
+    <inertial>
+      <origin
+        xyz="0.0222201182530038 1.06376880251203E-16 -0.00199999999999995"
+        rpy="0 0 0" />
+      <mass
+        value="0.0800337451106475" />
+      <inertia
+        ixx="0.000140817695689598"
+        ixy="-2.1412702419482E-21"
+        ixz="-1.79417520674756E-22"
+        iyy="0.00014599552982419"
+        iyz="8.53888734849771E-21"
+        izz="0.000286599802193493" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/camera_layer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/camera_layer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_layer_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.024"
+      rpy="0 0 0" />
+    <parent
+      link="mmwave_layer_link" />
+    <child
+      link="camera_layer_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="velodyne_layer_link">
+    <inertial>
+      <origin
+        xyz="0 1.94519439980185E-17 -0.0369048607856333"
+        rpy="0 0 0" />
+      <mass
+        value="0.102279060449258" />
+      <inertia
+        ixx="0.000129051984474187"
+        ixy="-1.71249187018948E-20"
+        ixz="-1.4979184649021E-22"
+        iyy="9.43324194371609E-05"
+        iyz="1.03518030447557E-22"
+        izz="0.00022311165975015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/velodyne_layer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/velodyne_layer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="velodyne_layer_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.2"
+      rpy="0 0 0" />
+    <parent
+      link="camera_layer_link" />
+    <child
+      link="velodyne_layer_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="velodyne1">
+    <inertial>
+      <origin
+        xyz="-0.000204107711619175 -1.48435748332082E-05 -0.0110477585355708"
+        rpy="0 0 0" />
+      <mass
+        value="0.639680330048926" />
+      <inertia
+        ixx="0.000691066055083113"
+        ixy="-1.30551476787178E-07"
+        ixz="-1.91576696424982E-07"
+        iyy="0.000681012953343301"
+        iyz="1.31768757352229E-08"
+        izz="0.000851613294109676" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/velodyne_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/velodyne_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="velodyne_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0383041612649508"
+      rpy="0 0 0" />
+    <parent
+      link="velodyne_layer_link" />
+    <child
+      link="velodyne1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_pan_link">
+    <inertial>
+      <origin
+        xyz="-1.22580877458481E-06 -0.0144175610955237 -0.0199063082381958"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460103793451425" />
+      <inertia
+        ixx="9.175642289247E-06"
+        ixy="1.37982420132085E-10"
+        ixz="-1.20945357295933E-13"
+        iyy="4.20719528695045E-06"
+        iyz="3.27234447085355E-08"
+        izz="1.0173068860295E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/camera_pan_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/camera_pan_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_pan_joint"
+    type="revolute">
+    <origin
+      xyz="0.0835 0 -0.002"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="camera_layer_link" />
+    <child
+      link="camera_pan_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="camera_tilt_link">
+    <inertial>
+      <origin
+        xyz="-0.00150156151130088 -0.00420559940484633 -0.0201617531906366"
+        rpy="0 0 0" />
+      <mass
+        value="0.0620661254386648" />
+      <inertia
+        ixx="1.51390413345506E-05"
+        ixy="4.04829742968631E-07"
+        ixz="-5.98148912838138E-13"
+        iyy="9.85776128703565E-06"
+        iyz="3.27234194904702E-08"
+        izz="1.27862204474753E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/camera_tilt_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/camera_tilt_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_tilt_joint"
+    type="revolute">
+    <origin
+      xyz="-0.021 0 0.0415"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="camera_pan_link" />
+    <child
+      link="camera_tilt_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-0.0126222905709004 -0.0308176836107964 2.48057231405641E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0381911723642292" />
+      <inertia
+        ixx="2.35737411040552E-05"
+        ixy="4.51124225862898E-08"
+        ixz="-1.30125590914773E-08"
+        iyy="2.11168828999785E-06"
+        iyz="-8.02396306163878E-09"
+        izz="2.22571079944342E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0439 0.041 0.0115"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="camera_tilt_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="velodyne2_layer_link">
+    <inertial>
+      <origin
+        xyz="0.002 -7.46356525807841E-18 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.054035325769978" />
+      <inertia
+        ixx="0.000126125108971967"
+        ixy="6.69924836096087E-22"
+        ixz="2.8024598424477E-22"
+        iyy="5.30902098409728E-05"
+        iyz="1.96556647865135E-21"
+        izz="7.31789933330477E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/velodyne2_layer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/velodyne2_layer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="velodyne2_layer_joint"
+    type="fixed">
+    <origin
+      xyz="-0.159 0 0.132"
+      rpy="0 0 0" />
+    <parent
+      link="camera_layer_link" />
+    <child
+      link="velodyne2_layer_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="velodyne2">
+    <inertial>
+      <origin
+        xyz="-0.00029478445768083 -2.58019387493527E-06 -0.00252963549973825"
+        rpy="0 0 0" />
+      <mass
+        value="0.58508215249429" />
+      <inertia
+        ixx="0.000629066957622614"
+        ixy="1.12600646744869E-10"
+        ixz="6.84879643022154E-08"
+        iyy="0.00063026391270577"
+        iyz="-5.00502875846612E-08"
+        izz="0.000749251773722338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/velodyne2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/velodyne2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="velodyne2_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0383041612649509 0 0"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="velodyne2_layer_link" />
+    <child
+      link="velodyne2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_right_front_link">
+    <inertial>
+      <origin
+        xyz="8.11503292693083E-05 -0.000131195783214799 -0.00197364720135179"
+        rpy="0 0 0" />
+      <mass
+        value="0.00461902722416037" />
+      <inertia
+        ixx="2.79688413742294E-06"
+        ixy="-1.04162189931823E-08"
+        ixz="6.5896166888069E-10"
+        iyy="1.64317003939038E-07"
+        iyz="-1.06534370267916E-09"
+        izz="2.94618429421187E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_right_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_right_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_right_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.0995080927005418 -0.133633902747921 0.00500000000000006"
+      rpy="0 0 -0.78539816339745" />
+    <parent
+      link="mmwave_layer_link" />
+    <child
+      link="mmwave_right_front_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_right_back_link">
+    <inertial>
+      <origin
+        xyz="8.11503292693638E-05 -0.000131195783214827 -0.00197364720135179"
+        rpy="0 0 0" />
+      <mass
+        value="0.00461902722416037" />
+      <inertia
+        ixx="2.79688413742293E-06"
+        ixy="-1.04162189931821E-08"
+        ixz="6.58961668880685E-10"
+        iyy="1.64317003939037E-07"
+        iyz="-1.06534370267907E-09"
+        izz="2.94618429421186E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_right_back_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_right_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_right_back_joint"
+    type="fixed">
+    <origin
+      xyz="-0.00938185435645664 -0.164617649887209 0.005"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="mmwave_layer_link" />
+    <child
+      link="mmwave_right_back_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_left_front_link">
+    <inertial>
+      <origin
+        xyz="8.11503292693361E-05 -0.000131195783214841 -0.00197364720135179"
+        rpy="0 0 0" />
+      <mass
+        value="0.00461902722416037" />
+      <inertia
+        ixx="2.79688413742294E-06"
+        ixy="-1.04162189931825E-08"
+        ixz="6.58961668880692E-10"
+        iyy="1.64317003939037E-07"
+        iyz="-1.06534370267922E-09"
+        izz="2.94618429421187E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_left_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_left_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_left_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.098633902747921 0.134508092700542 0.005"
+      rpy="0 0 0.78539816339745" />
+    <parent
+      link="mmwave_layer_link" />
+    <child
+      link="mmwave_left_front_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_left_back_link">
+    <inertial>
+      <origin
+        xyz="8.11503292693638E-05 -0.000131195783214785 -0.00197364720135179"
+        rpy="0 0 0" />
+      <mass
+        value="0.00461902722416037" />
+      <inertia
+        ixx="2.79688413742293E-06"
+        ixy="-1.04162189931821E-08"
+        ixz="6.58961668880688E-10"
+        iyy="1.64317003939037E-07"
+        iyz="-1.06534370267913E-09"
+        izz="2.94618429421187E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_left_back_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://guiding_robot_description/meshes/mmwave_left_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_left_back_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0106181456435433 0.164617649887208 0.00500000000000006"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="mmwave_layer_link" />
+    <child
+      link="mmwave_left_back_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

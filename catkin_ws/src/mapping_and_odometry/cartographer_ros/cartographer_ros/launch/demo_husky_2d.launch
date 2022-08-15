@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--
+  Copyright 2016 The Cartographer Authors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<launch>
+  <arg name="bag_filename"/>
+  <param name="/use_sim_time" value="true" />
+
+  <!--node pkg="tf" type="static_transform_publisher" name="base2velodyne"
+                 args="0 0 0.7575 0 0 0 1 base_link velodyne 100"/-->
+  <!--node pkg="tf" type="static_transform_publisher" name="base2imu"
+                 args="0 0 0 0 0 0 1 base_link imu_link 100"/-->
+
+  <node pkg="tf" type="static_transform_publisher" name="base_velodyne_broadcaster" args="0 0 0.7 0  0 0 /base_link /velodyne 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_imu_broadcaster" args="0 0 0 0 0 0 /base_link /imu_link 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_camera_left_broadcaster" args="0.35 0.25 0.25 0.785 0 0 /base_link /camera_left_link 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_camera_middle_broadcaster" args="0.4 0 0.25 0 0 0 /base_link /camera_middle_link 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_camera_right_broadcaster" args="0.35 -0.25 0.25 -0.785 0 0 /base_link /camera_right_link 100"/>
+
+  <include file="$(find cartographer_ros)/launch/husky_2d.launch" />
+
+  <!--node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" /-->
+  <node name="playbag" pkg="rosbag" type="play"
+      args="--clock $(arg bag_filename)" />
+</launch>

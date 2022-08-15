@@ -1,0 +1,7 @@
+<launch>
+    <group ns="base_test">
+        <node pkg="mapping_relay" type="test_marker.py" name="test_marker" output="screen"></node>
+        <node pkg="mapping_relay" type="test_telem.py" name="test_poseArray" output="screen"></node>
+        <node pkg="mapping_relay" type="test_pcl2.py" name="test_pcl2" output="screen"></node>
+    </group>
+</launch>

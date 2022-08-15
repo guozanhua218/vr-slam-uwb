@@ -72,13 +72,8 @@ private:
     double velocity;
     double effort;
     double velocity_command;
-    double position_offset;
 
-    Joint() : position(0),
-              velocity(0),
-              effort(0),
-              velocity_command(0),
-              position_offset(std::numeric_limits<double>::quiet_NaN())
+    Joint() : position(0), velocity(0), effort(0), velocity_command(0)
     {
     }
   }

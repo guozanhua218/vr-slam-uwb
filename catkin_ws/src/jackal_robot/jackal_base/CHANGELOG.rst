@@ -2,34 +2,6 @@
 Changelog for package jackal_base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.6.2 (2021-04-28)
-------------------
-
-0.6.5 (2022-03-08)
-------------------
-
-0.6.4 (2022-01-18)
-------------------
-* Added analyzers for ekf_localization only when enabled
-* Added analyzers to group twist mux
-* Contributors: Luis Camero
-
-0.6.3 (2021-09-29)
-------------------
-* Merge pull request `#33 <https://github.com/jackal/jackal_robot/issues/33>`_ from ms-iot/init_windows
-  Fix Windows build
-* Fix Windows build
-* 0.6.2
-* Update the changelogs ahead of release
-* Contributors: Chris Iverach-Brereton, Lou Amadio, Tony Baltovski
-
-0.6.1 (2021-03-08)
-------------------
-* Use eval to find the mag config. This should fix a bug when jackal is installed to ros.d
-* Set default for optenv JACKAL_MAG_CONFIG
-* Removed env-hooks
-* Contributors: Chris Iverach-Brereton, Dave Niewinski
-
 0.6.0 (2020-04-20)
 ------------------
 * [jackal_base] Stopped using Vector3 messages for on-board IMU.

@@ -1,45 +1,6 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Changelog for package jackal_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-0.7.9 (2022-03-08)
-------------------
-
-
-0.7.8 (2022-01-18)
-------------------
-
-0.7.7 (2021-10-01)
-------------------
-* Fix the custom_example URDF file to the LMS1xx sensors don't throw errors
-* Enable roslaunch_add_file_check when CATKIN_ENABLE_TESTING=true
-* Added velodyne towers and HDL-32E sensor (#88)
-* Contributors: Chris I-B, Luis Camero, PN:Ruichao Wu2
-
-0.7.6 (2021-07-18)
-------------------
-* cpr urdf extras
-* Contributors: Ebrahim Shahrivar
-
-0.7.5 (2021-03-24)
-------------------
-* Add the origin block to the fender UST-10 macros; otherwise enabling them crashes
-* Contributors: Chris I-B
-
-0.7.4 (2021-03-16)
-------------------
-* Bumped CMake version to avoid author warning.
-* Contributors: Tony Baltovski
-
-0.7.3 (2021-03-08)
-------------------
-*  Add VLP16 support, refactor main/secondary laser envar support (#79)
-* Contributors: Chris I-B
-
-0.7.2 (2020-09-29)
-------------------
-
-0.7.1 (2020-08-24)
-------------------
 
 0.7.0 (2020-04-20)
 ------------------

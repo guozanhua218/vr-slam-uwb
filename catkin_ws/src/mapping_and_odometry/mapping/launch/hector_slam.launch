@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<arg name="robot" default="husky" />
+	<arg name="odom_topic" default="/husky_velocity_controller/odom" />
+	<arg name="pointcloud_topic" default="/velodyne_points" />
+	<arg name="base_frame" default="/base_footprint"/>
+    <arg name="odom_frame" default="/odom"/>
+    <arg name="map_frame" default="slam_map"/>
+    <arg name="scan_topic" default="$(arg robot)/scan"/>
+	<arg name="pub_map_odom_transform" default="false"/>
+	<arg name="scan_subscriber_queue_size" default="5"/>
+	<arg name="map_size" default="4096"/>
+	<arg name="tf_map_scanmatch_transform_frame_name" default="scanmatcher_frame"/>
+
+	<include file="$(find pointcloud_to_laserscan)/launch/pcl2laser.launch">
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="pointcloud_topic" value="$(arg pointcloud_topic)" />
+	</include>
+
+	<include file="$(find mapping)/launch/pub_tf.launch"></include>
+	
+	<include file="$(find hector_mapping)/launch/mapping_subt.launch">
+		<arg name="tf_map_scanmatch_transform_frame_name" value="$(arg tf_map_scanmatch_transform_frame_name)"/>
+		<arg name="base_frame" value="$(arg base_frame)"/>
+		<arg name="odom_frame" value="$(arg odom_frame)"/>
+		<arg name="pub_map_odom_transform" value="$(arg pub_map_odom_transform)"/>
+		<arg name="scan_subscriber_queue_size" value="$(arg scan_subscriber_queue_size)"/>
+		<arg name="scan_topic" value="$(arg scan_topic)"/>
+		<arg name="map_size" value="$(arg map_size)"/>
+	</include>
+
+
+
+<!-- 	<node pkg="amcl" type="amcl" name="amcl">
+
+		<remap from="scan" to="/husky/scan"/>
+		<node pkg="map_server" type="map_server" name="map_server" args="/home/andyser/code/David_dream/My_robot/catkin_ws/map.yaml"/>
+		<param name="use_map_topic" value="true"/>
+		<param name="odom_model_type" value="omni"/>
+		<param name="odom_alpha5" value="0.1"/>
+		<param name="transform_tolerance" value="0.5" />
+		<param name="gui_publish_rate" value="10.0"/>
+		<param name="laser_max_beams" value="300"/>
+		<param name="min_particles" value="500"/>
+		<param name="max_particles" value="5000"/>
+		<param name="kld_err" value="0.1"/>
+		<param name="kld_z" value="0.99"/>
+		<param name="odom_alpha1" value="0.1"/>
+		<param name="odom_alpha2" value="0.1"/>
+
+		<param name="odom_alpha3" value="0.1"/>
+		<param name="odom_alpha4" value="0.1"/>
+		<param name="laser_z_hit" value="0.9"/>
+		<param name="laser_z_short" value="0.05"/>
+		<param name="laser_z_max" value="0.05"/>
+		<param name="laser_z_rand" value="0.5"/>
+		<param name="laser_sigma_hit" value="0.2"/>
+		<param name="laser_lambda_short" value="0.1"/>
+		<param name="laser_lambda_short" value="0.1"/>
+		<param name="laser_model_type" value="likelihood_field"/>
+
+		<param name="laser_min_range" value="1"/>
+		<param name="laser_max_range" value="5"/>
+		<param name="laser_likelihood_max_dist" value="2.0"/>
+		<param name="update_min_d" value="0.2"/>
+		<param name="update_min_a" value="0.5"/>
+		<param name="resample_interval" value="1"/>
+		<param name="transform_tolerance" value="0.1"/>
+		<param name="recovery_alpha_slow" value="0.0"/>
+		<param name="recovery_alpha_fast" value="0.0"/>
+	</node> -->
+</launch>

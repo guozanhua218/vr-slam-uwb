@@ -1,0 +1,66 @@
+<launch>
+    <rosparam command="load" file="$(find jackal_control)/config/control.yaml" />
+    <!-- velocity smoother arg-->
+    <!-- <arg name="veh" default="husky2" /> -->
+    <arg name="use_vel_smoother" default="true"/>
+    <arg name="node_name"             value="velocity_smoother"/>
+    <arg name="nodelet_manager_name"  value="nodelet_manager"/>
+    <arg name="config_file"           value="$(find yocs_velocity_smoother)/param/standalone.yaml"/>
+    <arg name="raw_cmd_vel_topic"     value="raw_cmd_vel"/>
+    <arg name="smooth_cmd_vel_topic"  value="cmd_vel"/>
+    <arg name="robot_cmd_vel_topic"   value="robot_cmd_vel"/>
+    <arg name="odom_topic"            value="odom"/>
+
+    <group if="$(optenv JACKAL_CONTROL_EXTRAS 0)" >
+      <rosparam command="load" file="$(env JACKAL_CONTROL_EXTRAS_PATH)" />
+    </group>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner"
+          args="jackal_joint_publisher jackal_velocity_controller" />
+
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+      <rosparam command="load" file="$(find jackal_control)/config/robot_localization.yaml" />
+    </node>
+
+    <group if="$(arg use_vel_smoother)" >
+        <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+            <rosparam command="load" file="$(find jackal_control)/config/twist_mux.yaml" />
+            <remap from="cmd_vel_out" to="jackal_velocity_controller/raw_cmd_vel"/>
+        </node>
+        
+        <!-- nodelet manager -->
+        <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager_name)" args="manager"/>
+  
+        <!-- velocity smoother -->
+        <include file="$(find yocs_velocity_smoother)/launch/velocity_smoother.launch">
+            <arg name="node_name"             value="$(arg node_name)"/>
+            <arg name="nodelet_manager_name"  value="$(arg nodelet_manager_name)"/>
+            <arg name="config_file"           value="$(arg config_file)"/>
+            <arg name="raw_cmd_vel_topic"     value="$(arg raw_cmd_vel_topic)"/>
+            <arg name="smooth_cmd_vel_topic"  value="$(arg smooth_cmd_vel_topic)"/>
+            <arg name="robot_cmd_vel_topic"   value="$(arg robot_cmd_vel_topic)"/>
+            <arg name="odom_topic"            value="$(arg odom_topic)"/>
+        </include>
+    </group>
+
+    <group unless="$(arg use_vel_smoother)" >
+      <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+          <rosparam command="load" file="$(find jackal_control)/config/twist_mux.yaml" />
+          <remap from="cmd_vel_out" to="jackal_velocity_controller/raw_cmd_vel"/>
+      </node>
+        
+        <!-- nodelet manager -->
+      <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager_name)" args="manager"/>
+
+      <!-- velocity smoother -->
+      <include file="$(find yocs_velocity_smoother)/launch/velocity_smoother.launch">
+          <arg name="node_name"             value="$(arg node_name)"/>
+          <arg name="nodelet_manager_name"  value="$(arg nodelet_manager_name)"/>
+          <arg name="config_file"           value="$(arg config_file)"/>
+          <arg name="raw_cmd_vel_topic"     value="$(arg raw_cmd_vel_topic)"/>
+          <arg name="smooth_cmd_vel_topic"  value="$(arg smooth_cmd_vel_topic)"/>
+          <arg name="robot_cmd_vel_topic"   value="$(arg robot_cmd_vel_topic)"/>
+          <arg name="odom_topic"            value="$(arg odom_topic)"/>
+      </include>
+    </group>
+</launch>

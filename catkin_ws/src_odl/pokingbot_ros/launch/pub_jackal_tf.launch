@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <!--choose robot to pub robot0  -->
+    <group ns="robot1">
+        <node name="pub_husky_pose_and_camera_image" pkg="pokingbot_ros" type="pub_husky_pose_and_camera_image.py" output="screen">
+            <param name="which_car" value="robot1" />
+        </node>
+
+        <node name="pub_stick" pkg="pokingbot_ros" type="pub_stick.py" output="screen">
+            <param name="which_car" value="robot1" />
+        </node>
+
+        <node name="pub_stick_jointstate" pkg="pokingbot_ros" type="pub_stick_jointstate.py" output="screen">
+            <param name="robot_name" value="robot1" />
+        </node>
+    </group>
+
+    <group ns="robot2">
+        <node name="pub_husky_pose_and_camera_image" pkg="pokingbot_ros" type="pub_husky_pose_and_camera_image.py" output="screen">
+            <param name="which_car" value="robot2" />
+        </node>
+
+        <node name="pub_stick" pkg="pokingbot_ros" type="pub_stick.py" output="screen">
+            <param name="which_car" value="robot2" />
+        </node>
+
+        <node name="pub_stick_jointstate" pkg="pokingbot_ros" type="pub_stick_jointstate.py" output="screen">
+            <param name="robot_name" value="robot2" />
+        </node>
+    </group>
+
+    <group ns="robot3">
+        <node name="pub_husky_pose_and_camera_image" pkg="pokingbot_ros" type="pub_husky_pose_and_camera_image.py" output="screen">
+            <param name="which_car" value="robot3" />
+        </node>
+
+        <node name="pub_stick" pkg="pokingbot_ros" type="pub_stick.py" output="screen">
+            <param name="which_car" value="robot3" />
+        </node>
+        
+        <node name="pub_stick_jointstate" pkg="pokingbot_ros" type="pub_stick_jointstate.py" output="screen">
+            <param name="robot_name" value="robot3" />
+        </node>
+    </group>
+    
+</launch>

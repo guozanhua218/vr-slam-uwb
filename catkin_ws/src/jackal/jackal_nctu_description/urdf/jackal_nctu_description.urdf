@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="jackal_nctu_description">
+  <!-- <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0124601794809711 -0.00167139635776993 0.131287954500905"
+        rpy="0 0 0" />
+      <mass
+        value="39.1540606507033" />
+      <inertia
+        ixx="0.374409733288124"
+        ixy="7.01780001313663E-05"
+        ixz="5.95993205059563E-05"
+        iyy="0.565393603241255"
+        iyz="-2.9644991373887E-05"
+        izz="0.727275385788559" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link> -->
+  <link
+    name="uwb_left_front_link">
+    <inertial>
+      <origin
+        xyz="-0.00847444006555131 -0.0022014365010906 -0.00407385504991126"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157111424636558" />
+      <inertia
+        ixx="1.73928430428468E-05"
+        ixy="2.86887862009599E-08"
+        ixz="2.58805301227201E-08"
+        iyy="9.61452061739199E-06"
+        iyz="-5.59073633558126E-07"
+        izz="8.9381324357199E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/uwb_left_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/uwb_left_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="uwb_left_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.2458 0.1743 0.28816"
+      rpy="0 0 0.7854" />
+    <parent
+      link="base_link" />
+    <child
+      link="uwb_left_front_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_left_front_link">
+    <inertial>
+      <origin
+        xyz="-0.00033958420972624 0.0562537719993841 0.0220817242425496"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157111424636558" />
+      <inertia
+        ixx="1.73928430428468E-05"
+        ixy="2.86887862009607E-08"
+        ixz="2.58805301227191E-08"
+        iyy="9.614520617392E-06"
+        iyz="-5.59073633558126E-07"
+        izz="8.9381324357199E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/mmwave_left_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/mmwave_left_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_left_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.281381975951818 0.127210534294844 0.262"
+      rpy="0 0 0.785398163397448" />
+    <parent
+      link="base_link" />
+    <child
+      link="mmwave_left_front_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="uwb_right_front_link">
+    <inertial>
+      <origin
+        xyz="-0.00847444006555115 0.00220143650083729 -0.0054904437047687"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157111424635834" />
+      <inertia
+        ixx="1.73677851102585E-05"
+        ixy="-2.86887862010467E-08"
+        ixz="-9.98473857269123E-09"
+        iyy="9.58946268502228E-06"
+        iyz="7.0957639714209E-07"
+        izz="8.93813243550083E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/uwb_right_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/uwb_right_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="uwb_right_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.245800113365088 -0.174296820360832 0.289457844315392"
+      rpy="0 0 -0.785398163397449" />
+    <parent
+      link="base_link" />
+    <child
+      link="uwb_right_front_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_right_front_link">
+    <inertial>
+      <origin
+        xyz="-0.000339584209752608 -0.0562537719997321 0.0219674006106228"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157111424635834" />
+      <inertia
+        ixx="1.73677851102585E-05"
+        ixy="-2.86887862010463E-08"
+        ixz="-9.98473857269107E-09"
+        iyy="9.58946268502228E-06"
+        iyz="7.09576397142092E-07"
+        izz="8.93813243550082E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/mmwave_right_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/mmwave_right_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_right_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.281381975951904 -0.127210534294795 0.262"
+      rpy="0 0 -0.785398163397449" />
+    <parent
+      link="base_link" />
+    <child
+      link="mmwave_right_front_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="uwb_right_back_link">
+    <inertial>
+      <origin
+        xyz="-0.00847444006555131 -0.00220143650109053 -0.00407385504991126"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157111424636557" />
+      <inertia
+        ixx="1.73928430428467E-05"
+        ixy="2.86887862009543E-08"
+        ixz="2.58805301227144E-08"
+        iyy="9.61452061739196E-06"
+        iyz="-5.59073633558129E-07"
+        izz="8.93813243571975E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/uwb_right_back_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/uwb_right_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="uwb_right_back_joint"
+    type="fixed">
+    <origin
+      xyz="-0.245800113365088 -0.174296820360832 0.288155579292461"
+      rpy="0 0 -2.35619449019235" />
+    <parent
+      link="base_link" />
+    <child
+      link="uwb_right_back_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_right_back_link">
+    <inertial>
+      <origin
+        xyz="-0.00033958420972624 0.0562537719993841 0.0220817242425496"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157111424636557" />
+      <inertia
+        ixx="1.73928430428467E-05"
+        ixy="2.86887862009518E-08"
+        ixz="2.5880530122715E-08"
+        iyy="9.61452061739196E-06"
+        iyz="-5.59073633558132E-07"
+        izz="8.93813243571975E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/mmwave_right_back_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/mmwave_right_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_right_back_joint"
+    type="fixed">
+    <origin
+      xyz="-0.281381975951818 -0.127210534294844 0.262"
+      rpy="0 0 -2.35619449019235" />
+    <parent
+      link="base_link" />
+    <child
+      link="mmwave_right_back_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="uwb_left_back_link">
+    <inertial>
+      <origin
+        xyz="-0.0084744400655512 0.00220143650083711 -0.00549044370476859"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157111424635834" />
+      <inertia
+        ixx="1.73677851102583E-05"
+        ixy="-2.86887862010424E-08"
+        ixz="-9.98473857269054E-09"
+        iyy="9.58946268502224E-06"
+        iyz="7.09576397142026E-07"
+        izz="8.93813243550064E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/uwb_left_back_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/uwb_left_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="uwb_left_back_joint"
+    type="fixed">
+    <origin
+      xyz="-0.245800113365088 0.174296820360832 0.289457844315392"
+      rpy="0 0 2.35619449019234" />
+    <parent
+      link="base_link" />
+    <child
+      link="uwb_left_back_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mmwave_left_back_link">
+    <inertial>
+      <origin
+        xyz="-0.000339584209752664 -0.0562537719997322 0.021967400610623"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157111424635834" />
+      <inertia
+        ixx="1.73677851102583E-05"
+        ixy="-2.86887862010454E-08"
+        ixz="-9.98473857268948E-09"
+        iyy="9.58946268502223E-06"
+        iyz="7.09576397142025E-07"
+        izz="8.93813243550063E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/mmwave_left_back_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/mmwave_left_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mmwave_left_back_joint"
+    type="fixed">
+    <origin
+      xyz="-0.281381975951904 0.127210534294795 0.262"
+      rpy="0 0 2.35619449019234" />
+    <parent
+      link="base_link" />
+    <child
+      link="mmwave_left_back_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="gps_link">
+    <inertial>
+      <origin
+        xyz="-5.90199753081251E-07 4.13886367539584E-08 -0.0151433666632058"
+        rpy="0 0 0" />
+      <mass
+        value="0.0932591183441545" />
+      <inertia
+        ixx="3.08947796687594E-05"
+        ixy="-8.28258304937971E-29"
+        ixz="-4.47954505127613E-22"
+        iyy="3.08947796687645E-05"
+        iyz="7.39706855638062E-13"
+        izz="4.9448512900716E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/gps_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/gps_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gps_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.0999999660483242 0.370200315564509"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="gps_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="velodyne1">
+    <inertial>
+      <origin
+        xyz="-0.000294784457680899 -2.58019387493367E-06 -0.00252963549973806"
+        rpy="0 0 0" />
+      <mass
+        value="0.58508215249429" />
+      <inertia
+        ixx="0.000629066957622614"
+        ixy="1.12600646692913E-10"
+        ixz="6.84879643021266E-08"
+        iyy="0.00063026391270577"
+        iyz="-5.00502875846689E-08"
+        izz="0.000749251773722338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/velodyne_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/velodyne_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="velodyne_joint"
+    type="fixed">
+    <origin
+      xyz="0.12 0 0.485304161264951"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="velodyne1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="pan_link">
+    <inertial>
+      <origin
+        xyz="2.94128491344081E-05 0.00109369176180428 -0.01447780820469"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460103793451424" />
+      <inertia
+        ixx="9.17564228924697E-06"
+        ixy="1.2094535944691E-13"
+        ixz="-1.37982420138693E-10"
+        iyy="1.01730688602949E-05"
+        iyz="3.27234447085348E-08"
+        izz="4.20719528695043E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/pan_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/pan_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pan_joint"
+    type="revolute">
+    <origin
+      xyz="0.2395 0 0.2705"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="pan_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.7"
+      upper="0.7"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="tilt_link">
+    <inertial>
+      <origin
+        xyz="0.0128404357997566 0.0354874966717271 0.0239999835907868"
+        rpy="0 0 0" />
+      <mass
+        value="0.0265871680478988" />
+      <inertia
+        ixx="1.36838821364363E-05"
+        ixy="-9.94576165281732E-07"
+        ixz="7.11469148209345E-13"
+        iyy="1.05971113848605E-05"
+        iyz="8.04346349965433E-12"
+        izz="8.6625089963771E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/tilt_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/tilt_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tilt_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.024 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="pan_link" />
+    <child
+      link="tilt_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5"
+      upper="0.5"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-0.0108835940115835 -0.0309081772962424 4.83251035315324E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0366960873560006" />
+      <inertia
+        ixx="2.31059896588595E-05"
+        ixy="4.32775595160852E-08"
+        ixz="-1.29955098751199E-08"
+        iyy="2.08765788307745E-06"
+        iyz="-8.45363564090851E-09"
+        izz="2.18080538212602E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jackal_nctu_description/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.04378 0.0415 -0.0085"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="tilt_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

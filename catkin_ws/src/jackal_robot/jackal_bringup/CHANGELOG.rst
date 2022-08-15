@@ -2,51 +2,6 @@
 Changelog for package jackal_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.6.2 (2021-04-28)
-------------------
-* Fix the name of the VLP16 launch file that gets included in accessories
-* Fix a c&p error where and arg was referenced before it was actually assigned
-* Contributors: Chris Iverach-Brereton
-
-0.6.5 (2022-03-08)
-------------------
-* Updated Microstrain launch to include new variables (`#47 <https://github.com/jackal/jackal_robot/issues/47>`_)
-* [jackal_bringup] Removed unnecessary udev rule.
-* Contributors: Tony Baltovski, luis-camero
-
-0.6.4 (2022-01-18)
-------------------
-
-0.6.3 (2021-09-29)
-------------------
-* Merge pull request `#37 <https://github.com/jackal/jackal_robot/issues/37>`_ from luis-camero/melodic-devel
-  Added Velodyne HDL-32E driver launch file to the accessories launch
-* Added Velodyne HDL-32E driver launch file to the accessories launch file under environment variable JACKAL_LASER_3D_MODEL=hdl32e
-* Add envar support for adding a GX5 family IMU (`#34 <https://github.com/jackal/jackal_robot/issues/34>`_)
-  * Launch the GX5 IMU node if necessary
-  * Change the name of the frame id arg for the IMU to match with the latest ros_mscl
-  * Use the ENU frame instead of NED for the GX5
-* Merge pull request `#32 <https://github.com/jackal/jackal_robot/issues/32>`_ from jackal/rsci-227
-  Set fender lidar angle range
-* Set the max/min angles for the fender lidars to [-pi, pi] to prevent the sensors from seeing the wheels/chassis.  If the robot sees its own wheels it can cause problems with ARK, which is the main use-case for the fender lasers.
-* 0.6.2
-* Update the changelogs ahead of release
-* Fix the name of the VLP16 launch file that gets included in accessories
-* Fix a c&p error where and arg was referenced before it was actually assigned
-* Contributors: Chris I-B, Chris Iverach-Brereton, Luis Camero, Tony Baltovski
-
-0.6.1 (2021-03-08)
-------------------
-* Add VLP16 support, refactor main/secondary laser envar support (`#27 <https://github.com/jackal/jackal_robot/issues/27>`_)
-  * Add groups for the front/rear fender lasers' nodes
-  * Revert the front/rear laser frames to "front_laser" and "rear_laser" respectively, to match with the frames in jackal_description (proposed PR to rename them was rejected)
-  * Enable launching the secondary 2D laser, and the primary 3D laser
-  * Rename LASER2 to LASER_SECONDARY
-  * Change the default mount for the 3d laser to the middle
-  Co-authored-by: Tony Baltovski <tbaltovski@clearpathrobotics.com>
-* Remove the PS4 symlink; we've consolidated the udev rules and are relying on ds4drv to provide that rule now
-* Contributors: Chris I-B, Chris Iverach-Brereton
-
 0.6.0 (2020-04-20)
 ------------------
 * Fix the IP address for the urg_node used by the hokuyo lidar

@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <robot name="jackal" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+ 
   <xacro:property name="PI" value="3.1415926535897931" />
 
   <xacro:property name="wheelbase" value="0.262" />
@@ -92,7 +94,7 @@
     <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:wheel>
 
-  <link name="base_link"></link>
+  <link name="base_link"> </link>
 
   <joint name="base_link_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -260,6 +262,5 @@
   <!-- Optional custom includes. -->
   <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />
 
-  <!-- Optional for Clearpath internal softwares -->
-  <xacro:include filename="$(optenv CPR_URDF_EXTRAS empty.urdf)" />
+  <xacro:include filename="$(find guiding_robot_description)/urdf/guiding_robot_description.urdf" />
 </robot>

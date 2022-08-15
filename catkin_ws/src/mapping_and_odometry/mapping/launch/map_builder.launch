@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<arg name="veh" default="husky1" />
+	<arg name="voxel_size" default="0.25" />
+	<arg name="use_icp" default="false" />
+
+	<group ns="$(arg veh)">
+
+		<node pkg="mapping" type="map_builder" name="map_builder" output="screen">
+			<param name="voxel_size" value="$(arg voxel_size)" />
+			<param name="use_icp" value="$(arg use_icp)" />
+		</node>
+
+	</group>
+
+</launch>

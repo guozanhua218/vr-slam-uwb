@@ -2,42 +2,6 @@
 Changelog for package jackal_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.7.9 (2022-03-08)
-------------------
-
-0.7.8 (2022-01-18)
-------------------
-
-0.7.7 (2021-10-01)
-------------------
-* Enable roslaunch_add_file_check when CATKIN_ENABLE_TESTING=true
-* Contributors: PN:Ruichao Wu2
-
-0.7.6 (2021-07-18)
-------------------
-
-0.7.5 (2021-03-24)
-------------------
-
-0.7.4 (2021-03-16)
-------------------
-* Bumped CMake version to avoid author warning.
-* Contributors: Tony Baltovski
-
-0.7.3 (2021-03-08)
-------------------
-
-0.7.2 (2020-09-29)
-------------------
-* Use the JACKAL_LASER_TOPIC env var as the default for the scan topic in amcl + gmapping demos (`#74 <https://github.com/jackal/jackal/issues/74>`_)
-* Contributors: Chris I-B
-
-0.7.1 (2020-08-24)
-------------------
-* Remove the leading / from the gmapping default scan topic
-* Expose the scan_topic and use_map_topic parameters in the demo launch files
-* Contributors: Chris Iverach-Brereton
-
 0.7.0 (2020-04-20)
 ------------------
 

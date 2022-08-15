@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<arg name="veh" default="robot" />
+	<arg name="x_range" default="10" />
+	<arg name="y_range" default="10" />
+	<arg name="z_range" default="20" />
+	<arg name="voxel_size" default="0.25" />
+	<arg name="use_icp" default="true" />
+
+	<node pkg="mapping" type="pub_loam_tf.py" name="pub_loam_tf" output="screen"></node>
+
+	<group ns="$(arg veh)">
+
+		<node pkg="mapping" type="velodyne_transform" name="velodyne_transform" output="screen">
+			<param name="x_range" value="$(arg x_range)" />
+			<param name="y_range" value="$(arg y_range)" />
+			<param name="z_range" value="$(arg z_range)" />
+			<param name="voxel_size" value="$(arg voxel_size)" />
+			<param name="use_icp" value="$(arg use_icp)" />
+		</node>
+
+	</group>
+
+</launch>

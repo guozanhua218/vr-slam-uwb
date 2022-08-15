@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <package format="2">
     <name>pointcloud_to_laserscan</name>
-    <version>1.4.1</version>
+    <version>1.4.0</version>
     <description>Converts a 3D Point Cloud into a 2D laser scan. This is useful for making devices like the Kinect appear like a laser scanner for 2D-based algorithms (e.g. laser-based SLAM).</description>
 
     <maintainer email="paul@bovbel.com">Paul Bovbel</maintainer>
-    <maintainer email="michel@ekumenlabs.com">Michel Hidalgo</maintainer>
     <author email="paul@bovbel.com">Paul Bovbel</author>
     <author>Tully Foote</author>
 
@@ -17,7 +16,6 @@
 
     <buildtool_depend>catkin</buildtool_depend>
 
-    <depend>laser_geometry</depend>
     <depend>message_filters</depend>
     <depend>nodelet</depend>
     <depend>roscpp</depend>
