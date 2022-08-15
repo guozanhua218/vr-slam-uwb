@@ -74,4 +74,6 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     ros-$ROS_DISTRO-rosdoc-lite \
     ros-$ROS_DISTRO-rosserial-python \
     ros-$ROS_DISTRO-amcl \
+    ros-$ROS_DISTRO-rosbridge-server \
+    ros-$ROS_DISTRO-axis-camera \
     python3-scipy
