@@ -7,10 +7,10 @@
     <arg name="width" value="480" />
     <arg name="height" value="480" />
   </include>
+  
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
 
   <include file="$(find velodyne_pointcloud)/launch/VLP16_points_jackal.launch" />
-
-  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
 
   <include file="$(find pointcloud_to_laserscan)/launch/pointcloud2laserscan.launch" />
 
