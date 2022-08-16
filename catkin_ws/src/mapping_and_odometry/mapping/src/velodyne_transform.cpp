@@ -79,7 +79,7 @@ MapFilter::MapFilter(NodeHandle &nh)
 
 
     pub_map = nh.advertise<sensor_msgs::PointCloud2>("icp_map", 1);
-    sub_map = nh.subscribe("lidar_crop", 1, &MapFilter::pc_cb, this);
+    sub_map = nh.subscribe("velodyne/velodyne_points", 1, &MapFilter::pc_cb, this);
     ROS_INFO("map filter initialized");
 }
 
@@ -93,8 +93,8 @@ void MapFilter::pc_cb(const sensor_msgs::PointCloud2 msg)
     try
     {
         ros::Duration five_seconds(5.0);
-        listener.waitForTransform("/map", "/velodyne_tmp", ros::Time(0), five_seconds);
-        listener.lookupTransform("/map", "/velodyne_tmp", ros::Time(0), tf_pose);
+        listener.waitForTransform("/map", "/velodyne", ros::Time(0), five_seconds);
+        listener.lookupTransform("/map", "/velodyne", ros::Time(0), tf_pose);
     }
     catch (tf::TransformException ex)
     {
