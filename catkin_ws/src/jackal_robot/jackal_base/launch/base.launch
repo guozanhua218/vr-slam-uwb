@@ -55,5 +55,5 @@
       <rosparam command="load" file="$(find jackal_base)/config/diagnostic_analyzers.yaml" />
     </node>
   <!-- </group> -->
-    <node pkg="pokingbot_ros" type="sub_vr_joy.py" name="sub_vr_joy.py"/>
+    <node pkg="pokingbot_ros" type="sub_vr_joy.py" name="sub_vr_joy"/>
 </launch>
