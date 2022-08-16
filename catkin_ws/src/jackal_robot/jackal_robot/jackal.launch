@@ -1,0 +1,25 @@
+<launch>
+
+  <include file="$(find jackal_base)/launch/base.launch" />
+
+  <include file="$(find axis_camera)/launch/axis.launch">
+    <arg name="hostname" value="111.70.9.27" />
+    <arg name="width" value="480" />
+    <arg name="height" value="480" />
+  </include>
+
+  <include file="$(find velodyne_pointcloud)/launch/VLP16_points_jackal.launch" />
+
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+
+  <include file="$(find pointcloud_to_laserscan)/launch/pointcloud2laserscan.launch" />
+
+  <include file="$(find pointcloud_to_laserscan)/launch/laser_filter.launch" />
+
+  <include file="$(find gmapping)/launch/slam_gmapping_husky.launch">
+    <arg name="veh" value="robot" />
+  </include>
+  
+  <include file="$(find mapping)/launch/velodyne_transform.launch" />
+
+</launch>
