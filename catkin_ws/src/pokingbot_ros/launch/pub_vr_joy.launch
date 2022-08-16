@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <node pkg="pokingbot_ros" type="sub_vr_joy.py" name="sub_vr_joy" output="screen" >
+    </node>
+</launch>
