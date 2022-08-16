@@ -43,7 +43,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://guiding_robot_description/meshes/camera_pan_link.STL" />
+        <mesh filename="package://vr_robot_description/meshes/camera_pan_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
@@ -52,7 +52,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://guiding_robot_description/meshes/camera_pan_link.STL" />
+        <mesh filename="package://vr_robot_description/meshes/camera_pan_link.STL" />
       </geometry>
     </collision>
   </link>
