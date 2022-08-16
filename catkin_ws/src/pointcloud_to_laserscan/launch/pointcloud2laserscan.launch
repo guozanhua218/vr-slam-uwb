@@ -10,7 +10,7 @@
             <remap from="cloud_in" to="/robot/velodyne/velodyne_points"/>
             <remap from="scan" to="/robot/velodyne/scan"/>
             <rosparam>
-                target_frame: velodyne_tmp
+                target_frame: velodyne
                 min_height: -0.1
                 max_height: 0.1
                 transform_tolerance: 0.01
