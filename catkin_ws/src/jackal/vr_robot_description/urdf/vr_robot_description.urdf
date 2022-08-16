@@ -30,5 +30,11 @@
     <parent link="base_link" />
     <child link="velodyne" />
     <axis xyz="0 0 0" />
-  </joint>  
+  </joint>
+  <joint name="axis_camera_joint" type="fixed">
+    <origin xyz="0.017 0 0" rpy="-1.5 0 0" />
+    <parent link="base_link" />
+    <child link="axis_camera_link" />
+    <axis xyz="0 0 0" />
+  </joint>
 </robot>
