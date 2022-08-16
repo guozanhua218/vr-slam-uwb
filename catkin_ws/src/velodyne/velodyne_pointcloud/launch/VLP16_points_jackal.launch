@@ -1,7 +1,5 @@
 <launch>
-  <arg name="veh" default="robot" />
 
-  <group ns="$(arg veh)">
     <group ns="velodyne">
       <!-- declare arguments with default values -->
       <arg name="calibration" default="$(find velodyne_pointcloud)/params/VLP16db.yaml" />
@@ -44,5 +42,4 @@
       </include>
 
     </group>
-  </group>
 </launch>
