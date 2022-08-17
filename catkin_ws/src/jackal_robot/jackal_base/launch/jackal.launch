@@ -28,7 +28,7 @@
     <!-- Gmapping Launch -->
     <include file="$(find gmapping)/launch/slam_gmapping_jackal.launch"/>
 
-    <include file="$(find mapping)/launch/velodyne_transform.launch"/>
+    <!-- <include file="$(find mapping)/launch/velodyne_transform.launch"/> -->
   </group>
 
   <node pkg="pokingbot_ros" type="sub_vr_joy.py" name="sub_vr_joy">
