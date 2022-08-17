@@ -3,6 +3,9 @@
   <arg name="veh" default="jackal"/>
 
   <group ns="$(arg veh)">
+
+    <param name="tf_prefix" value="$(arg veh)" />
+    
     <!-- Jackal Base Launch -->
     <include file="$(find jackal_base)/launch/base.launch"/>
     
