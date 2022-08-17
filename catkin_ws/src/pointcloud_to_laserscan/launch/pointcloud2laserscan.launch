@@ -6,7 +6,7 @@
 
         <remap from="cloud_in" to="velodyne/velodyne_points" />
         <remap from="scan" to="scan" />
-        <param name="target_frame" value="/$(arg veh)/velodyne" />
+        <param name="target_frame" value="$(arg veh)/velodyne" />
         <rosparam>
                 min_height: -0.1
                 max_height: 0.1
