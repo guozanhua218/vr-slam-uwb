@@ -1,14 +1,14 @@
 <launch>
 
-  <arg name="veh" default="jackal"/>
+  <arg name="veh" default="jackal" />
 
   <group ns="$(arg veh)">
 
     <param name="tf_prefix" value="$(arg veh)" />
-    
+
     <!-- Jackal Base Launch -->
-    <include file="$(find jackal_base)/launch/base.launch"/>
-    
+    <include file="$(find jackal_base)/launch/base.launch" />
+
     <!-- Axis Camera Launch -->
     <include file="$(find axis_camera)/launch/axis.launch">
       <arg name="hostname" value="111.70.9.27" />
@@ -17,30 +17,34 @@
     </include>
 
     <!-- Rosbridge WebSocket Launch -->
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
 
     <!-- Velodyne Launch -->
-    <include file="$(find velodyne_pointcloud)/launch/VLP16_points_jackal.launch"/>
+    <include file="$(find velodyne_pointcloud)/launch/VLP16_points_jackal.launch">
+      <arg name="veh" value="$(arg veh)" />
+    </include>
 
     <!-- Pointcloud to Laserscan Launch -->
-    <include file="$(find pointcloud_to_laserscan)/launch/pointcloud2laserscan.launch"/>
+    <include file="$(find pointcloud_to_laserscan)/launch/pointcloud2laserscan.launch" />
 
     <!-- Filter Backward Laserscan Launch -->
-    <include file="$(find pointcloud_to_laserscan)/launch/laser_filter.launch"/>
+    <include file="$(find pointcloud_to_laserscan)/launch/laser_filter.launch" />
 
     <!-- Gmapping Launch -->
-    <include file="$(find gmapping)/launch/slam_gmapping_jackal.launch"/>
+    <include file="$(find gmapping)/launch/slam_gmapping_jackal.launch">
+      <arg name="veh" value="$(arg veh)" />
+    </include>
 
     <!-- <include file="$(find mapping)/launch/velodyne_transform.launch"/> -->
   </group>
 
   <node pkg="pokingbot_ros" type="sub_vr_joy.py" name="sub_vr_joy">
-    <remap from="/vr/joystick_xy" to="/vr/joystick_xy"/>
-    <remap from="/vr2/joystick_xy" to="/vr2/joystick_xy"/>
-    <remap from="/vr3/joystick_xy" to="/vr3/joystick_xy"/>
-    <remap from="/robot1/cmd_vel" to="/jackal/vr_teleop/cmd_vel"/>
-    <remap from="/robot2/cmd_vel" to="/robot2/cmd_vel"/>
-    <remap from="/robot3/cmd_vel" to="/robot3/cmd_vel"/>
+    <remap from="/vr/joystick_xy" to="/vr/joystick_xy" />
+    <remap from="/vr2/joystick_xy" to="/vr2/joystick_xy" />
+    <remap from="/vr3/joystick_xy" to="/vr3/joystick_xy" />
+    <remap from="/robot1/cmd_vel" to="/jackal/vr_teleop/cmd_vel" />
+    <remap from="/robot2/cmd_vel" to="/robot2/cmd_vel" />
+    <remap from="/robot3/cmd_vel" to="/robot3/cmd_vel" />
   </node>
 
 </launch>
