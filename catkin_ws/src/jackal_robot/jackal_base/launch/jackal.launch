@@ -21,7 +21,7 @@
 
     <!-- Velodyne Launch -->
     <include file="$(find velodyne_pointcloud)/launch/VLP16_points_jackal.launch">
-      <arg name="veh" value="$(arg veh)" />
+      <arg name="veh" value="$(arg veh)"/>
     </include>
 
     <!-- Pointcloud to Laserscan Launch -->
