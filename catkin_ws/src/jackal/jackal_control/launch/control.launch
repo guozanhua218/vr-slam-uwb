@@ -11,12 +11,12 @@
 
   <node name="controller_spawner" pkg="controller_manager" type="spawner" args="jackal_joint_publisher jackal_velocity_controller" />
 
-  <!-- <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
     <rosparam command="load" file="$(find jackal_control)/config/robot_localization.yaml" />
     <param name="world_frame" value="jackal/odom" />
     <param name="odom_frame" value="jackal/odom" />
     <param name="base_link_frame" value="jackal/base_link" />
-  </node> -->
+  </node>
 
   <node pkg="twist_mux" type="twist_mux" name="twist_mux">
     <rosparam command="load" file="$(find jackal_control)/config/twist_mux.yaml" />
