@@ -1,6 +1,4 @@
-<?xml version="1.0"?>
 <launch>
-  <arg name="veh" doc="please specify veh" />
   <arg name="base_frame" default="base_link" />
   <arg name="odom_frame" default="odom" />
   <arg name="map_frame" default="map" />
