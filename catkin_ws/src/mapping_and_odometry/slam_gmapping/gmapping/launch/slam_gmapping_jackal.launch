@@ -1,17 +1,17 @@
 <launch>
   <arg name="veh" default="jackal" />
-  <arg name="map_frame" default="map" />
-  <arg name="odom_frame" default="odom" />
-  <arg name="base_frame" default="base_link" />
+  <arg name="map_frame" default="/$(arg veh)/map" />
+  <arg name="odom_frame" default="/$(arg veh)/odom" />
+  <arg name="base_frame" default="/$(arg veh)/base_link" />
   <arg name="scan" default="scan/filtered" />
   <arg name="odom_topic" default="jackal_velocity_controller/odom" />
 
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
     <rosparam command="load" file="$(find gmapping)/config/param.yaml" />
     <remap from="scan" to="$(arg scan)" />
-    <param name="base_frame" value="$(arg veh)/$(arg base_frame)" />
-    <param name="map_frame" value="$(arg veh)/$(arg map_frame)" />
-    <param name="odom_frame" value="$(arg veh)/$(arg odom_frame)" />
+    <param name="map_frame" value="$(arg map_frame)" />
+    <param name="odom_frame" value="$(arg odom_frame)" />
+    <param name="base_frame" value="$(arg base_frame)" />
   </node>
   
 </launch>

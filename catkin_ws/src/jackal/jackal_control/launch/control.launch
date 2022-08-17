@@ -2,8 +2,8 @@
   <arg name="veh" default="robot" />
   
   <rosparam command="load" file="$(find jackal_control)/config/control.yaml" />
-  <param name="jackal_velocity_controller/base_frame_id" value="$(arg veh)/base_link"/>
-  <param name="jackal_velocity_controller/odom_frame_id" value="$(arg veh)/odom"/>
+  <param name="jackal_velocity_controller/base_frame_id" value="/$(arg veh)/base_link"/>
+  <param name="jackal_velocity_controller/odom_frame_id" value="/$(arg veh)/odom"/>
 
   <group if="$(optenv JACKAL_CONTROL_EXTRAS 0)">
     <rosparam command="load" file="$(env JACKAL_CONTROL_EXTRAS_PATH)" />
