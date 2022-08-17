@@ -12,10 +12,10 @@
                 min_height: -0.1
                 max_height: 0.1
                 transform_tolerance: 0.01
-                angle_min: -2.094395
-                angle_max: 2.094395
-                angle_increment: 0.017453
-                scan_time: 0.1
+                angle_min: -3.141593
+                angle_max: -3.141593
+                angle_increment: 0.002181893
+                scan_time: 0.05
                 range_min: 0
                 range_max: 100.0
                 use_inf: False
@@ -24,7 +24,7 @@
                 # 0 : Detect number of cores
                 # 1 : Single threaded
                 # 2->inf : Parallelism level
-                concurrency_level: 2
+                concurrency_level: 0
             </rosparam>
     </node>
 
