@@ -16,7 +16,8 @@ jackal_velocity_controller:
 
   # Odometry fused with IMU is published by robot_localization, so
   # no need to publish a TF based on encoders alone.
-  enable_odom_tf: false
+  enable_odom_tf: true
+  publish_cmd: true
 
   # Wheel separation and radius multipliers
   wheel_separation_multiplier: 1.5 # default: 1.0
@@ -27,14 +28,14 @@ jackal_velocity_controller:
   linear:
     x:
       has_velocity_limits    : true
-      max_velocity           : 2.0   # m/s
+      max_velocity           : 1.0   # m/s
       has_acceleration_limits: true
-      max_acceleration       : 1   # m/s^2
+      max_acceleration       : 1.0   # m/s^2
   angular:
     z:
       has_velocity_limits    : true
-      max_velocity           : 4.0   # rad/s
+      max_velocity           : 1.0   # rad/s
       has_acceleration_limits: true
-      max_acceleration       : 12.0   # rad/s^2
+      max_acceleration       : 1.0   # rad/s^2
 
 
