@@ -4,8 +4,8 @@ base_frame: "base_link"
 map_frame: "map"
 odom_frame: "odom"
 # -------------------
-map_update_interval: 5.0
-maxUrange: 16.0
+map_update_interval: 2.0
+maxUrange: 100.0
 sigma: 0.05
 kernelSize: 1
 lstep: 0.05
@@ -18,11 +18,11 @@ srr: 0.1
 srt: 0.2
 str: 0.1
 stt: 0.2
-linearUpdate: 1.0
-angularUpdate: 0.5
-temporalUpdate: 3.0
+linearUpdate: 0.3
+angularUpdate: 0.15
+temporalUpdate: 2.0
 resampleThreshold: 0.5
-particles: 30
+particles: 50
 # <!-- Map size -->
 xmin: -200.0
 ymin: -200.0
