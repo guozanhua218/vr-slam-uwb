@@ -14,7 +14,7 @@
                 transform_tolerance: 0.01
                 angle_min: -3.14159
                 angle_max: 3.14159
-                angle_increment: 0.002181893
+                angle_increment: 0.0035
                 scan_time: 0.05
                 range_min: 0
                 range_max: 100.0
