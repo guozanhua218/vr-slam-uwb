@@ -3,7 +3,6 @@
   
   <rosparam command="load" file="$(find jackal_control)/config/control.yaml" />
   
-  <rosparam command="delete" param="tf_prefix"/>
   <param name="jackal_velocity_controller/base_frame_id" value="$(arg veh)/base_link"/>
   <param name="jackal_velocity_controller/odom_frame_id" value="$(arg veh)/odom"/>
 
