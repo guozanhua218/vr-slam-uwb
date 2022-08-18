@@ -30,9 +30,7 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     sudo \
     lsb-release \
     build-essential \
-    net-tools \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    net-tools
 
 RUN cd ${HOME} && git clone https://github.com/lcm-proj/lcm \
     && cd lcm \
@@ -78,7 +76,8 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     ros-$ROS_DISTRO-axis-camera \
     ros-$ROS_DISTRO-tf2-sensor-msgs \
     python-scipy \
-    python3-scipy
-RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
-    && apt-get -o Acquire::ForceIPv4=true install -yq --no-install-recommends \
-    ros-melodic-cartographer
+    python3-scipy \
+    ros-$ROS_DISTRO-cartographer \
+    && rosdep update \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
