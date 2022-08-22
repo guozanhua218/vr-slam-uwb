@@ -1,8 +1,8 @@
 <launch>
   <arg name="veh" default="jackal" />
-  <arg name="map_frame" default="/$(arg veh)/map" />
-  <arg name="odom_frame" default="/$(arg veh)/odom" />
-  <arg name="base_frame" default="/$(arg veh)/base_link" />
+  <arg name="map_frame" default="$(arg veh)/map" />
+  <arg name="odom_frame" default="$(arg veh)/odom" />
+  <arg name="base_frame" default="$(arg veh)/base_link" />
   <arg name="scan" default="scan/filtered" />
   <arg name="odom_topic" default="jackal_velocity_controller/odom" />
 

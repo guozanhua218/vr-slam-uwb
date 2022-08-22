@@ -7,13 +7,13 @@
 
 	<node pkg="mapping" type="pub_loam_tf.py" name="pub_loam_tf" output="screen"></node>
 
-	<node pkg="mapping" type="velodyne_transform" name="velodyne_transform" output="screen">
+	<!-- <node pkg="mapping" type="velodyne_transform" name="velodyne_transform" output="screen">
 		<param name="x_range" value="$(arg x_range)" />
 		<param name="y_range" value="$(arg y_range)" />
 		<param name="z_range" value="$(arg z_range)" />
 		<param name="voxel_size" value="$(arg voxel_size)" />
 		<param name="use_icp" value="$(arg use_icp)" />
-	</node>
+	</node> -->
 
 
 </launch>
