@@ -6,7 +6,9 @@
 
 
     <!-- Jackal Base Launch -->
-    <include file="$(find jackal_base)/launch/base.launch" />
+    <include file="$(find jackal_base)/launch/base.launch">
+      <arg name="veh" value="$(arg veh)"/>
+    </include>
 
     <!-- Axis Camera Launch -->
     <include file="$(find axis_camera)/launch/axis.launch">
