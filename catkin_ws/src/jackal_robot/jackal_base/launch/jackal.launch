@@ -36,7 +36,9 @@
       <arg name="veh" value="$(arg veh)" />
     </include>
 
-    <include file="$(find mapping)/launch/velodyne_transform.launch"/>
+    <include file="$(find mapping)/launch/velodyne_transform.launch">
+      <arg name="veh" value="$(arg veh)" />
+    </include>
   </group>
 
   <node pkg="pokingbot_ros" type="sub_vr_joy.py" name="sub_vr_joy">

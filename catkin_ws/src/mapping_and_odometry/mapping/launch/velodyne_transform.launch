@@ -1,11 +1,19 @@
 <launch>
+  <arg name="veh" default="jackal" />
+  <arg name="map_frame" default="$(arg veh)/map" />
+  <arg name="odom_frame" default="$(arg veh)/odom" />
+  <arg name="base_frame" default="$(arg veh)/base_link" />
+	
 	<arg name="x_range" default="10" />
 	<arg name="y_range" default="10" />
 	<arg name="z_range" default="20" />
 	<arg name="voxel_size" default="0.25" />
 	<arg name="use_icp" default="true" />
 
-	<node pkg="mapping" type="pub_loam_tf.py" name="pub_loam_tf" output="screen"></node>
+	<node pkg="mapping" type="pub_loam_tf.py" name="pub_loam_tf" output="screen">
+		<param name="odom_frame" value="$(arg odom_frame)" />
+    <param name="base_frame" value="$(arg base_frame)" />
+	</node>
 
 	<!-- <node pkg="mapping" type="velodyne_transform" name="velodyne_transform" output="screen">
 		<param name="x_range" value="$(arg x_range)" />

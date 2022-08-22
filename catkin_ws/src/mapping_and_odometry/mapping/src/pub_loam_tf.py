@@ -10,10 +10,10 @@ import tf
 class SLAMtf(object):
     def __init__(self):
         self.listener = tf.TransformListener()
-        self.robot_frame = rospy.get_param("~robot_frame", "base_link")
         self.map_frame = rospy.get_param("~map_frame", "map")
+        self.base_frame = rospy.get_param("~base_frame", "base_link")
         self.pub_pose = rospy.Publisher(
-            "/slam_pose", PoseStamped, queue_size=1)
+            "slam_pose", PoseStamped, queue_size=1)
         self.timer = rospy.Timer(rospy.Duration(0.1), self.pub_pose_cb)
 
     def pub_pose_cb(self, e):
