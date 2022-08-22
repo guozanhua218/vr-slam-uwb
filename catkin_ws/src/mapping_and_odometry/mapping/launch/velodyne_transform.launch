@@ -11,7 +11,7 @@
 	<arg name="use_icp" default="true" />
 
 	<node pkg="mapping" type="pub_loam_tf.py" name="pub_loam_tf" output="screen">
-		<param name="map" value="$(arg map_frame)" />
+		<param name="map_frame" value="$(arg map_frame)" />
     <param name="base_frame" value="$(arg base_frame)" />
 	</node>
 

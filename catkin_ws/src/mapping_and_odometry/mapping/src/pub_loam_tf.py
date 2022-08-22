@@ -23,7 +23,7 @@ class SLAMtf(object):
 
         try:
             (trans, rot) = self.listener.lookupTransform(
-                self.map_frame, self.robot_frame, rospy.Time(0))
+                self.map_frame, self.base_frame, rospy.Time(0))
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             return
 
