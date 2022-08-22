@@ -3,7 +3,7 @@
   <arg name="map_frame" default="$(arg veh)/map" />
   <arg name="odom_frame" default="$(arg veh)/odom" />
   <arg name="base_frame" default="$(arg veh)/base_link" />
-	
+
 	<arg name="x_range" default="10" />
 	<arg name="y_range" default="10" />
 	<arg name="z_range" default="20" />
@@ -11,7 +11,7 @@
 	<arg name="use_icp" default="true" />
 
 	<node pkg="mapping" type="pub_loam_tf.py" name="pub_loam_tf" output="screen">
-		<param name="odom_frame" value="$(arg odom_frame)" />
+		<param name="map" value="$(arg map_frame)" />
     <param name="base_frame" value="$(arg base_frame)" />
 	</node>
 
