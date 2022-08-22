@@ -57,6 +57,7 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     ros-$ROS_DISTRO-interactive-marker-twist-server \
     ros-$ROS_DISTRO-twist-mux \
     ros-$ROS_DISTRO-teleop-twist-joy \
+    ros-$ROS_DISTRO-teleop-twist-keyboard \
     ros-$ROS_DISTRO-nmea-comms \
     ros-$ROS_DISTRO-sick-tim \
     ros-$ROS_DISTRO-map-server \
