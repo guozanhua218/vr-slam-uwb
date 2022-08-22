@@ -14,4 +14,9 @@
     <param name="base_frame" value="$(arg base_frame)" />
   </node>
   
+  <node pkg="mapping" type="odom_tf.py" name="odom_tf" output="screen">
+    <remap from="wheel_odom" to="$(arg odom_topic)" />
+    <param name="odom_frame" value="$(arg odom_frame)" />
+    <param name="base_frame" value="$(arg base_frame)" />
+  </node>
 </launch>

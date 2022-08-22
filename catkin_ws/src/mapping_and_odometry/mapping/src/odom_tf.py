@@ -17,6 +17,8 @@ class Wheel_tf:
         self.br = tf.TransformBroadcaster()
         self.origin_matrix = None
         odom_sub = rospy.Subscriber("wheel_odom", Odometry, self.cb_odom, queue_size=1)
+        self.odom_frame = rospy.get_param("~odom_frame", "odom")
+        self.base_frame = rospy.get_param("~base_frame", "base_link")
 
     def cb_odom(self, msg):
         if self.origin_matrix is None:
@@ -46,8 +48,8 @@ class Wheel_tf:
                     quat[3],
                 ),
                 msg.header.stamp,
-                "base_link",
-                "odom",
+                self.base_frame,
+                self.odom_frame,
             )
 
 
