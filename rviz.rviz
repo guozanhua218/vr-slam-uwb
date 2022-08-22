@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Map1
       Splitter Ratio: 0.5
     Tree Height: 551
   - Class: rviz/Selection
@@ -21,6 +20,7 @@ Panels:
   - Class: rviz/Views
     Expanded:
       - /Current View1
+      - /Current View1/Focal Point1
     Name: Views
     Splitter Ratio: 0.5
   - Class: rviz/Time
@@ -50,49 +50,49 @@ Visualization Manager:
         Y: 0
         Z: 0
       Plane: XY
-      Plane Cell Count: 10
+      Plane Cell Count: 100
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         jackal/axis_camera_link:
-          Value: true
+          Value: false
         jackal/base_link:
           Value: true
         jackal/chassis_link:
-          Value: true
+          Value: false
         jackal/front_fender_link:
-          Value: true
+          Value: false
         jackal/front_left_wheel_link:
-          Value: true
+          Value: false
         jackal/front_mount:
-          Value: true
+          Value: false
         jackal/front_right_wheel_link:
-          Value: true
+          Value: false
         jackal/imu_link:
-          Value: true
+          Value: false
         jackal/map:
           Value: true
         jackal/mid_mount:
-          Value: true
+          Value: false
         jackal/navsat_link:
-          Value: true
+          Value: false
         jackal/odom:
           Value: true
         jackal/rear_fender_link:
-          Value: true
+          Value: false
         jackal/rear_left_wheel_link:
-          Value: true
+          Value: false
         jackal/rear_mount:
-          Value: true
+          Value: false
         jackal/rear_right_wheel_link:
-          Value: true
+          Value: false
         jackal/velodyne:
-          Value: true
-      Marker Scale: 1
+          Value: false
+      Marker Scale: 10
       Name: TF
       Show Arrows: true
       Show Axes: true
@@ -143,15 +143,15 @@ Visualization Manager:
       Axes Length: 1
       Axes Radius: 0.10000000149011612
       Class: rviz/Pose
-      Color: 255; 25; 0
+      Color: 0; 0; 255
       Enabled: true
-      Head Length: 0.30000001192092896
-      Head Radius: 0.10000000149011612
+      Head Length: 1
+      Head Radius: 1
       Name: Pose
-      Shaft Length: 1
-      Shaft Radius: 0.05000000074505806
+      Shaft Length: 3
+      Shaft Radius: 0.30000001192092896
       Shape: Arrow
-      Topic: /slam_pose
+      Topic: /jackal/slam_pose
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -163,8 +163,8 @@ Visualization Manager:
       Axis: Z
       Channel Name: intensity
       Class: rviz/LaserScan
-      Color: 255; 255; 255
-      Color Transformer: Intensity
+      Color: 255; 0; 0
+      Color Transformer: FlatColor
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
@@ -175,35 +175,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
-      Style: Flat Squares
-      Topic: /jackal/scan/filtered
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/LaserScan
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 0
-      Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Min Color: 0; 0; 0
-      Name: LaserScan
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.009999999776482582
+      Size (m): 0.1509999930858612
       Style: Flat Squares
       Topic: /jackal/scan/filtered
       Unreliable: false
@@ -238,16 +210,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 19.207355499267578
+      Distance: 40
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 2.307727575302124
-        Y: -0.5413269996643066
-        Z: 0.0006758730160072446
+        X: 10
+        Y: 0
+        Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
@@ -256,7 +228,7 @@ Visualization Manager:
       Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.1453936100006104
+      Yaw: 3.1415927410125732
     Saved: ~
 Window Geometry:
   Displays:
