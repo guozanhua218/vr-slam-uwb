@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<launch>
+    <arg name="veh" default="husky1" />
+    <arg name="port" default="/dev/ftdi_DN066LOT" />
+
+    <group ns="$(arg veh)">
+        <node pkg="xbee_communication" type="estop_monitor.py" name="xbee_monitor" output="screen">
+            <param name="port" value="$(arg port)" />
+        </node>
+
+        <node pkg="husky_control" type="estop_manager.py" name="estop_manager" output="screen" />
+    </group>
+
+</launch>

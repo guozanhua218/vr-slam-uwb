@@ -1,5 +1,5 @@
 <launch>
-  <arg name="veh" default="robot" />
+  <arg name="veh" default="jackal" />
   
   <rosparam command="load" file="$(find jackal_control)/config/control.yaml"/>
   

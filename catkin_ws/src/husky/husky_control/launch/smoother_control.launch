@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <arg name="use_vel_smoother" default="true"/>
+  <arg name="multimaster" default="$(optenv ROBOT_MULTIMASTER false)" />
+  <arg name="simulation" default="$(optenv ROBOT_SIMULATION false)" />
+  <arg name="robot_namespace" default="husky1" />
+
+  <arg name="config_extras" default="$(eval optenv('HUSKY_CONFIG_EXTRAS', find('husky_control') + '/config/empty.yaml'))" />
+
+  <arg name="laser_enabled" default="$(optenv HUSKY_LMS1XX_ENABLED false)" />
+  <arg name="kinect_enabled" default="$(optenv HUSKY_KINECT_ENABLED false)" />
+  <arg name="urdf_extras" default="$(optenv HUSKY_URDF_EXTRAS)" />
+  
+  <!-- velocity smoother arg-->
+  <arg name="veh" default="husky2" />
+  <arg name="node_name"             value="velocity_smoother"/>
+  <arg name="nodelet_manager_name"  value="nodelet_manager"/>
+  <arg name="config_file"           value="$(find yocs_velocity_smoother)/param/standalone.yaml"/>
+  <arg name="raw_cmd_vel_topic"     value="raw_cmd_vel"/>
+  <arg name="smooth_cmd_vel_topic"  value="cmd_vel"/>
+  <arg name="robot_cmd_vel_topic"   value="robot_cmd_vel"/>
+  <arg name="odom_topic"            value="odom"/>
+
+  <include file="$(find multimaster_launch)/launch/multimaster_robot.launch" if="$(arg multimaster)">
+    <arg name="gazebo_interface" value="$(find husky_control)/config/gazebo_interface.yaml" />
+    <arg name="public_interface" value="$(find husky_control)/config/public_interface.yaml" />
+    <arg name="robot_namespace" value="$(arg robot_namespace)" />
+    <arg name="simulation" value="$(arg simulation)" />
+  </include>
+
+  <!-- Load robot description -->
+  <include file="$(find husky_description)/launch/description.launch">
+    <arg name="laser_enabled" default="$(arg laser_enabled)" />
+    <arg name="kinect_enabled" default="$(arg kinect_enabled)" />
+    <arg name="urdf_extras" default="$(arg urdf_extras)" />
+    <arg name="robot_namespace" default="$(arg robot_namespace)" />
+  </include>
+
+  
+  <group if="$(arg use_vel_smoother)" ns="$(arg robot_namespace)">
+    <!-- Load controller configuration -->
+    <rosparam command="load" file="$(find husky_control)/config/control.yaml" />
+
+    <!-- Spawn controllers -->
+    <node name="base_controller_spawner" pkg="controller_manager" type="spawner" args="husky_joint_publisher husky_velocity_controller" />
+
+    <!-- Start EKF for localization -->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+      <rosparam command="load" file="$(find husky_control)/config/localization.yaml" />
+    </node>
+
+    <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+      <param name="publish_frequency" value="100" />
+      <param name="use_tf_static" value="false" />
+    </node>
+    >
+    <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+      <rosparam command="load" file="$(find husky_control)/config/twist_mux.yaml" />
+      <remap from="cmd_vel_out" to="husky_velocity_controller/raw_cmd_vel" />
+
+    </node>
+
+    <!-- nodelet manager -->
+    <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager_name)" args="manager"/>
+  
+    <!-- velocity smoother -->
+    <include file="$(find yocs_velocity_smoother)/launch/velocity_smoother.launch">
+      <arg name="node_name"             value="$(arg node_name)"/>
+      <arg name="nodelet_manager_name"  value="$(arg nodelet_manager_name)"/>
+      <arg name="config_file"           value="$(arg config_file)"/>
+      <arg name="raw_cmd_vel_topic"     value="$(arg raw_cmd_vel_topic)"/>
+      <arg name="smooth_cmd_vel_topic"  value="$(arg smooth_cmd_vel_topic)"/>
+      <arg name="robot_cmd_vel_topic"   value="$(arg robot_cmd_vel_topic)"/>
+      <arg name="odom_topic"            value="$(arg odom_topic)"/>
+    </include>
+
+    <!-- Override the default control parameters, see config/empty.yaml for default. -->
+    <rosparam command="load" file="$(arg config_extras)" />
+
+  </group>
+  
+  <group unless="$(arg use_vel_smoother)" ns="$(arg robot_namespace)">
+    <!-- Load controller configuration -->
+    <rosparam command="load" file="$(find husky_control)/config/control.yaml" />
+
+    <!-- Spawn controllers -->
+    <node name="base_controller_spawner" pkg="controller_manager" type="spawner" args="husky_joint_publisher husky_velocity_controller" />
+
+    <!-- Start EKF for localization -->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+      <rosparam command="load" file="$(find husky_control)/config/localization.yaml" />
+    </node>
+
+    <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+      <param name="publish_frequency" value="100" />
+      <param name="use_tf_static" value="false" />
+    </node>
+    >
+    <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+      <rosparam command="load" file="$(find husky_control)/config/twist_mux.yaml" />
+      <remap from="cmd_vel_out" to="husky_velocity_controller/cmd_vel" />
+
+    </node>
+
+    <!-- Override the default control parameters, see config/empty.yaml for default. -->
+    <rosparam command="load" file="$(arg config_extras)" />
+
+  </group>
+
+
+</launch>

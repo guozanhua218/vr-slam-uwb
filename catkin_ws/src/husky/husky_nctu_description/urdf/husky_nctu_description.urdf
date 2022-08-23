@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="husky_nctu_description">
+  <!--link name="base_link">
+    <inertial>
+      <origin xyz="0.0785914425797058 0.00395524069522627 0.224073617325561" rpy="0 0 0" />
+      <mass value="23.7074590741527" />
+      <inertia ixx="0.60231843719258" ixy="-0.00720520542950638" ixz="-1.76410656429083E-06" iyy="1.05804324615125" iyz="0.000212366481389635" izz="1.64064436323262" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0.945098039215686 0.905882352941176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link-->
+  <link name="camera_middle_link">
+    <inertial>
+      <origin xyz="-0.00944205938184228 -0.0314656221920742 1.76398323465665E-05" rpy="0 0 0" />
+      <mass value="0.0239163685197123" />
+      <inertia ixx="1.60719638572165E-05" ixy="-2.39110116167029E-08" ixz="-1.30053613625532E-08" iyy="1.53077570264252E-06" iyz="-8.1009751236772E-09" izz="1.5237368140556E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/camera_middle_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/camera_middle_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_mid_joint" type="fixed">
+    <origin xyz="0.506357261246434 0.0325000000000061 0.292811698622408" rpy="0 -0.261799387799144 0" />
+    <parent link="base_link" />
+    <child link="camera_middle_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="camera_left_link">
+    <inertial>
+      <origin xyz="-0.00959705111839865 -0.0314656234706914 1.75902354713764E-05" rpy="0 0 0" />
+      <mass value="0.0239163680806525" />
+      <inertia ixx="1.60739994479449E-05" ixy="-2.39246204412889E-08" ixz="-1.30089822981955E-08" iyy="1.53084471760323E-06" iyz="-8.05978234799342E-09" izz="1.52394517839063E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/camera_left_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/camera_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_left_joint" type="fixed">
+    <origin xyz="0.405778021406889 0.261948114985736 0.281825" rpy="0 0 0.785398163397461" />
+    <parent link="base_link" />
+    <child link="camera_left_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="camera_right_link">
+    <inertial>
+      <origin xyz="-0.00959705111862158 -0.0314656234718209 1.75902340737721E-05" rpy="0 0 0" />
+      <mass value="0.0239163680847363" />
+      <inertia ixx="1.60739994485874E-05" ixy="-2.39246203461531E-08" ixz="-1.30089822163004E-08" iyy="1.53084471789659E-06" iyz="-8.05978266532592E-09" izz="1.52394517843004E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/camera_right_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/camera_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_right_joint" type="fixed">
+    <origin xyz="0.451948114985734 -0.215778021406887 0.281824999999999" rpy="0 0 -0.785398163397435" />
+    <parent link="base_link" />
+    <child link="camera_right_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="mmwave_right_link">
+    <inertial>
+      <origin xyz="0.000272962265994825 -0.000387127846690705 -0.000998443332812071" rpy="0 0 0" />
+      <mass value="0.001698952777629" />
+      <inertia ixx="1.1469148979079E-06" ixy="-3.42578053890256E-09" ixz="-2.31153095591591E-10" iyy="5.85895477212221E-08" iyz="3.27832126634983E-10" izz="1.20276316938801E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/mmwave_right_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/mmwave_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mmwave_right_joint" type="fixed">
+    <origin xyz="0.46172257361102 -0.185851019517782 0.322324999999999" rpy="0 0 -0.785398163397434" />
+    <parent link="base_link" />
+    <child link="mmwave_right_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="mmwave_left_link">
+    <inertial>
+      <origin xyz="0.000272962265995047 -0.000387127846690566 -0.000998443332812016" rpy="0 0 0" />
+      <mass value="0.00169895277762902" />
+      <inertia ixx="1.14691489790792E-06" ixy="-3.42578053890333E-09" ixz="-2.31153095591543E-10" iyy="5.85895477212226E-08" iyz="3.27832126635705E-10" izz="1.20276316938804E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/mmwave_left_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/mmwave_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mmwave_left_joint" type="fixed">
+    <origin xyz="0.461722573611017 0.185851019517793 0.322325" rpy="0 0 0.785398163397459" />
+    <parent link="base_link" />
+    <child link="mmwave_left_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="mmwave_right_link_back">
+    <inertial>
+      <origin xyz="0.000272962265994825 -0.000387127846690399 -0.00099844333281196" rpy="0 0 0" />
+      <mass value="0.00169895277762897" />
+      <inertia ixx="1.14691489790789E-06" ixy="-3.42578053890256E-09" ixz="-2.31153095591769E-10" iyy="5.8589547721221E-08" iyz="3.27832126635882E-10" izz="1.202763169388E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/mmwave_right_link_back.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/mmwave_right_link_back.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mmwave_right_joint_back" type="fixed">
+    <origin xyz="-0.0858675444679625 -0.300000000000001 0.322324999999999" rpy="0 0 -1.57079632679488" />
+    <parent link="base_link" />
+    <child link="mmwave_right_link_back" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="mmwave_left_link_back">
+    <inertial>
+      <origin xyz="0.000272962265994992 -0.000387127846690372 -0.00099844333281196" rpy="0 0 0" />
+      <mass value="0.00169895277762903" />
+      <inertia ixx="1.14691489790792E-06" ixy="-3.42578053890306E-09" ixz="-2.31153095591585E-10" iyy="5.85895477212233E-08" iyz="3.27832126636014E-10" izz="1.20276316938804E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/mmwave_left_link_back.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/mmwave_left_link_back.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mmwave_left_joint_back" type="fixed">
+    <origin xyz="-0.0858675444679698 0.299999999999999 0.322325" rpy="0 0 1.57079632679491" />
+    <parent link="base_link" />
+    <child link="mmwave_left_link_back" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="velodyne1">
+    <inertial>
+      <origin xyz="-7.51320216243344E-05 -2.58702285259023E-06 -0.0362692772365076" rpy="0 0 0" />
+      <mass value="0.583537708098" />
+      <inertia ixx="0.00062906197555388" ixy="1.12600646709242E-10" ixz="6.84879643009083E-08" iyy="0.00062951411136137" iyz="-5.00502875846212E-08" izz="0.000748501972377938" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/velodyne1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/velodyne1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="velodyne1_joint" type="fixed">
+    <origin xyz="0 0 0.756444999999999" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="velodyne1" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="velodyne2">
+    <inertial>
+      <origin xyz="-7.51320216261231E-05 -2.58702285259086E-06 -0.036269277236508" rpy="0 0 0" />
+      <mass value="0.583537708098" />
+      <inertia ixx="0.000629061975553881" ixy="1.1260064671745E-10" ixz="6.84879643062068E-08" iyy="0.000629514111361371" iyz="-5.00502875846425E-08" izz="0.000748501972377938" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/velodyne2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/velodyne2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="velodyne2_joint" type="fixed">
+    <origin xyz="-0.14712000000006 0 0.589324999999997" rpy="3.14159265358979 1.5707963267949 0" />
+    <parent link="base_link" />
+    <child link="velodyne2" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="thermal_left_link">
+    <inertial>
+      <origin xyz="-0.0145095853939806 5.55111512312578E-17 -0.000205896581585319" rpy="0 0 0" />
+      <mass value="0.00669340810937031" />
+      <inertia ixx="1.16216180432527E-06" ixy="5.82335151237331E-22" ixz="3.13479076129748E-08" iyy="1.05738941594963E-06" iyz="-4.73471640887821E-22" izz="1.10037585843868E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/thermal_left_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/thermal_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="thermal_left_joint" type="fixed">
+    <origin xyz="0.471043977310408 0.189681801948472 0.282075" rpy="0 0 0.785398163397462" />
+    <parent link="base_link" />
+    <child link="thermal_left_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="imu_link">
+    <inertial>
+      <origin xyz="2.77555756156289E-17 0 -0.00499999999999999" rpy="0 0 0" />
+      <mass value="0.015" />
+      <inertia ixx="1.25E-06" ixy="1.17473305388803E-22" ixz="1.58744186878072E-22" iyy="3.25E-06" iyz="-3.97046694025453E-23" izz="4.25E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/imu_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0.176772444670002 -0.182174999999998 0.0734125" rpy="-3.14159265359 0 1.57079632679" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="thermal_mid_link">
+    <inertial>
+      <origin xyz="-0.0145095853939805 -1.2490009027033E-16 -0.000205896581585291" rpy="0 0 0" />
+      <mass value="0.00669340810937031" />
+      <inertia ixx="1.16216180432527E-06" ixy="2.93274136693415E-22" ixz="3.13479076129757E-08" iyy="1.05738941594964E-06" iyz="6.90857268614516E-22" izz="1.10037585843868E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/thermal_mid_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/thermal_mid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="thermal_mid_joint" type="fixed">
+    <origin xyz="0.501660942148102 0.0647500000000111 0.291812142757714" rpy="0 -0.261799387799144 0" />
+    <parent link="base_link" />
+    <child link="thermal_mid_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="r1_link">
+    <inertial>
+      <origin xyz="-6.38575442715728E-05 0 -0.0615" rpy="0 0 0" />
+      <mass value="0.0198988486215255" />
+      <inertia ixx="1.06801995572949E-05" ixy="1.90934898311857E-21" ixz="5.68873914513424E-22" iyy="1.06909404032696E-05" iyz="1.27129192990406E-21" izz="2.13412916876322E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r1_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r1_joint" type="fixed">
+    <origin xyz="0.265000000000003 -0.247499999999997 0.362325" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="r1_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="r2_link">
+    <inertial>
+      <origin xyz="-6.38575442715728E-05 -5.55111512312578E-17 0.1015" rpy="0 0 0" />
+      <mass value="0.0198988486215255" />
+      <inertia ixx="1.06801995572949E-05" ixy="-1.96104777140314E-21" ixz="4.99548952174519E-22" iyy="1.06909404032696E-05" iyz="-5.85891799603369E-21" izz="2.13412916876322E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r2_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r2_joint" type="fixed">
+    <origin xyz="0.265000000000003 -0.247499999999997 0.402324999999999" rpy="3.14159265358979 0 0" />
+    <parent link="base_link" />
+    <child link="r2_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="r5_link">
+    <inertial>
+      <origin xyz="5.55111512312578E-17 0 -0.088" rpy="0 0 0" />
+      <mass value="9.10670967545051E-06" />
+      <inertia ixx="2.26860629692224E-09" ixy="-1.12685865887113E-25" ixz="6.80652538133073E-25" iyy="2.26860629692224E-09" iyz="-4.65561640292669E-25" izz="7.42750229073436E-10" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r5_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r5_joint" type="fixed">
+    <origin xyz="0.264999999999997 0.247500000000003 0.362325" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="r5_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="r6_link">
+    <inertial>
+      <origin xyz="-6.38575442715728E-05 -5.55111512312578E-17 0.1015" rpy="0 0 0" />
+      <mass value="0.0198988486215255" />
+      <inertia ixx="1.06801995572949E-05" ixy="1.51519259295761E-21" ixz="4.96885654591068E-22" iyy="1.06909404032696E-05" iyz="-5.8642917888849E-21" izz="2.13412916876323E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r6_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r6_joint" type="fixed">
+    <origin xyz="0.264999999999997 0.247500000000003 0.402324999999999" rpy="3.14159265358979 0 0" />
+    <parent link="base_link" />
+    <child link="r6_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="r3_link">
+    <inertial>
+      <origin xyz="-6.38575442715728E-05 -3.91505295762471E-17 -0.0614999999999999" rpy="0 0 0" />
+      <mass value="0.0198988486215255" />
+      <inertia ixx="1.06801995572949E-05" ixy="1.40239987165341E-21" ixz="-1.80010928758727E-21" iyy="1.06909404032696E-05" iyz="4.99743123810546E-21" izz="2.13412916876323E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r3_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r3_joint" type="fixed">
+    <origin xyz="-0.28 0 0.362325" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="r3_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="r4_link">
+    <inertial>
+      <origin xyz="-6.38575442716283E-05 5.72083796770911E-17 0.1015" rpy="0 0 0" />
+      <mass value="0.0198988486215255" />
+      <inertia ixx="1.06801995572949E-05" ixy="-1.415072863225E-21" ixz="1.8000840440383E-21" iyy="1.06909404032696E-05" iyz="4.99743123810546E-21" izz="2.13412916876323E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r4_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/r4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r4_joint" type="fixed">
+    <origin xyz="-0.28 0 0.402324999999999" rpy="-3.14159265358979 0 0" />
+    <parent link="base_link" />
+    <child link="r4_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="uwb_right_back_link">
+    <inertial>
+      <origin xyz="-0.000764754558266755 -0.00849759633869029 -0.00538090990202766" rpy="0 0 0" />
+      <mass value="0.0154767110221341" />
+      <inertia ixx="9.52014318052735E-06" ixy="1.12979331151077E-08" ixz="1.5020271632585E-08" iyy="1.43427907273399E-05" iyz="-1.816151874697E-08" izz="5.97094914341189E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/uwb_right_back_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/uwb_right_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="uwb_right_back_joint" type="fixed">
+    <origin xyz="0.0301229907734729 -0.3085 0.34993617934125" rpy="0 0 -3.14159265358978" />
+    <parent link="base_link" />
+    <child link="uwb_right_back_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="uwb_right_front_link">
+    <inertial>
+      <origin xyz="-0.000764754558266689 -0.00849759633869035 0.00395434669329331" rpy="0 0 0" />
+      <mass value="0.0154767110221341" />
+      <inertia ixx="9.54425369620142E-06" ixy="1.12979331151023E-08" ixz="-1.69408973997532E-07" iyy="1.43669012430139E-05" iyz="-1.76621576957199E-08" izz="5.97094914341189E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/uwb_right_front_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/uwb_right_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="uwb_right_front_joint" type="fixed">
+    <origin xyz="0.38571528722843 -0.273879121180545 0.348625671466703" rpy="-3.14159265358979 0 0.785398163397462" />
+    <parent link="base_link" />
+    <child link="uwb_right_front_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="uwb_left_front_link">
+    <inertial>
+      <origin xyz="-0.000764754558266717 -0.00849759633869029 -0.00538090990202783" rpy="0 0 0" />
+      <mass value="0.015476711022134" />
+      <inertia ixx="9.52014318052726E-06" ixy="1.12979331151074E-08" ixz="1.50202716325759E-08" iyy="1.43427907273398E-05" iyz="-1.81615187469666E-08" izz="5.9709491434119E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/uwb_left_front_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/uwb_left_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="uwb_left_front_joint" type="fixed">
+    <origin xyz="0.385715287228426 0.273879121180554 0.34993617934125" rpy="0 0 -0.785398163397438" />
+    <parent link="base_link" />
+    <child link="uwb_left_front_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="uwb_left_back_link">
+    <inertial>
+      <origin xyz="-0.000764754558266769 -0.00849759633869029 0.00395434669329309" rpy="0 0 0" />
+      <mass value="0.015476711022134" />
+      <inertia ixx="9.5442536962014E-06" ixy="1.12979331151071E-08" ixz="-1.69408973997503E-07" iyy="1.43669012430139E-05" iyz="-1.76621576957223E-08" izz="5.97094914341187E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/uwb_left_back_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://husky_nctu_description/meshes/uwb_left_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="uwb_left_back_joint" type="fixed">
+    <origin xyz="0.0301229907734654 0.3085 0.348625671466703" rpy="3.14159265358979 0 -3.14159265358978" />
+    <parent link="base_link" />
+    <child link="uwb_left_back_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>

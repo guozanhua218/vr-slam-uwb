@@ -1,0 +1,46 @@
+<launch>
+
+  <arg name="veh" default="husky" />
+
+  <group ns="$(arg veh)">
+
+
+    <!-- Husky Base Launch -->
+    <include file="$(find husky_base)/launch/base.launch">
+      <arg name="veh" value="$(arg veh)"/>
+    </include>
+
+    <!-- Axis Camera Launch -->
+    <!-- <include file="$(find axis_camera)/launch/axis.launch">
+      <arg name="hostname" value="111.70.9.27" />
+      <arg name="width" value="480" />
+      <arg name="height" value="480" />
+    </include> -->
+
+    <!-- Rosbridge WebSocket Launch -->
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+
+    <!-- Velodyne Launch -->
+    <include file="$(find velodyne_pointcloud)/launch/VLP16_points_husky.launch">
+      <arg name="veh" value="$(arg veh)"/>
+    </include>
+
+    <!-- Pointcloud to Laserscan Launch -->
+    <include file="$(find pointcloud_to_laserscan)/launch/pointcloud2laserscan.launch">
+      <arg name="veh" value="$(arg veh)"/>
+    </include>
+
+    <!-- Filter Backward Laserscan Launch -->
+    <include file="$(find pointcloud_to_laserscan)/launch/laser_filter.launch" />
+
+    <!-- Gmapping Launch -->
+    <include file="$(find gmapping)/launch/slam_gmapping_husky.launch">
+      <arg name="veh" value="$(arg veh)" />
+    </include>
+
+    <include file="$(find mapping)/launch/velodyne_transform.launch">
+      <arg name="veh" value="$(arg veh)" />
+    </include>
+  </group>
+
+</launch>
