@@ -112,7 +112,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <child link="base_footprint" />
   </joint>
 
-  <link name="velodyne1">
+  <link name="velodyne">
     <inertial>
       <origin xyz="-7.51320216243344E-05 -2.58702285259023E-06 -0.0362692772365076" rpy="0 0 0" />
       <mass value="0.583537708098" />
@@ -134,38 +134,10 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
       </geometry>
     </collision>
   </link>
-  <joint name="velodyne1_joint" type="fixed">
-    <origin xyz="0.45 0 0.35" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="velodyne1" />
-    <axis xyz="0 0 0" />
-  </joint>
-  <link name="front_laser">
-    <inertial>
-      <origin xyz="-7.51320216243344E-05 -2.58702285259023E-06 -0.0362692772365076" rpy="0 0 0" />
-      <mass value="0.583537708098" />
-      <inertia ixx="0.00062906197555388" ixy="1.12600646709242E-10" ixz="6.84879643009083E-08" iyy="0.00062951411136137" iyz="-5.00502875846212E-08" izz="0.000748501972377938" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://husky_nctu_description/meshes/velodyne1.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://husky_nctu_description/meshes/velodyne1.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="front_laser_joint" type="fixed">
+  <joint name="velodyne_joint" type="fixed">
     <origin xyz="0 0 0.856444999999999" rpy="0 0 0" />
     <parent link="base_link" />
-    <child link="front_laser" />
+    <child link="velodyne" />
     <axis xyz="0 0 0" />
   </joint>
 
