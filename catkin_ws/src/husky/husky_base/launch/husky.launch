@@ -11,11 +11,11 @@
     </include>
 
     <!-- Axis Camera Launch -->
-    <!-- <include file="$(find axis_camera)/launch/axis.launch">
-      <arg name="hostname" value="111.70.9.27" />
+    <include file="$(find axis_camera)/launch/axis.launch">
+      <arg name="hostname" value="111.70.9.53" />
       <arg name="width" value="480" />
       <arg name="height" value="480" />
-    </include> -->
+    </include>
 
     <!-- Rosbridge WebSocket Launch -->
     <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
