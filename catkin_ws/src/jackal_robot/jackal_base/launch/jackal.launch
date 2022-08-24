@@ -17,9 +17,6 @@
       <arg name="height" value="480" />
     </include>
 
-    <!-- Rosbridge WebSocket Launch -->
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
-
     <!-- Velodyne Launch -->
     <include file="$(find velodyne_pointcloud)/launch/VLP16_points_jackal.launch">
       <arg name="veh" value="$(arg veh)"/>
@@ -43,13 +40,16 @@
     </include>
   </group>
 
+  <!-- Rosbridge WebSocket Launch -->
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+
   <node pkg="pokingbot_ros" type="sub_vr_joy.py" name="sub_vr_joy">
-    <remap from="/vr/joystick_xy" to="/vr/joystick_xy" />
-    <remap from="/vr2/joystick_xy" to="/vr2/joystick_xy" />
-    <remap from="/vr3/joystick_xy" to="/vr3/joystick_xy" />
-    <remap from="/robot1/cmd_vel" to="/jackal/vr_teleop/cmd_vel" />
-    <remap from="/robot2/cmd_vel" to="/robot2/cmd_vel" />
-    <remap from="/robot3/cmd_vel" to="/robot3/cmd_vel" />
+    <remap from="vr/joystick_xy" to="vr/joystick_xy" />
+    <remap from="vr2/joystick_xy" to="vr2/joystick_xy" />
+    <remap from="vr3/joystick_xy" to="vr3/joystick_xy" />
+    <remap from="robot1/cmd_vel" to="jackal/teleop_vr/cmd_vel" />
+    <remap from="robot2/cmd_vel" to="husky/teleop_vr/cmd_vel" />
+    <remap from="robot3/cmd_vel" to="robot3/cmd_vel" />
   </node>
 
 </launch>
