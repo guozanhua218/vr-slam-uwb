@@ -16,12 +16,12 @@ if [ "$1" ]; then
   elif [ "$1" == "lan" ]; then
     URI=192.168.0.100
     IP=192.168.0.100
-    
+
   else
 
     if [ "$2" ]; then
-    URI=$1
-    IP=$2
+      URI=$1
+      IP=$2
     fi
 
   fi
