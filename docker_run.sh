@@ -36,5 +36,5 @@ docker run \
     --network host \
     --privileged \
     --security-opt seccomp=unconfined \
-    sunfuchou/vr_slam_uwb:jackal-nuc \
+    sunfuchou/vr_slam_uwb:x86 \
     bash

@@ -1,4 +1,4 @@
-IMG=sunfuchou/vr_slam_uwb:jackal-nuc
+IMG=sunfuchou/vr_slam_uwb:x86
 
 xhost +
 containerid=$(docker ps -aqf "ancestor=${IMG}") && echo $containerid
