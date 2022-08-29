@@ -2,6 +2,13 @@
 
 ARGS=("$@")
 
+NAME=vr_slam_uwb
+REPOSITORY="sunfuchou/vr_slam_uwb"
+TAG="x86"
+
+IMG="${REPOSITORY}:${TAG}"
+
+
 # Make sure processes in the container can connect to the x server
 # Necessary so gazebo can create a context for OpenGL rendering (even headless)
 XAUTH=/tmp/.docker.xauth
@@ -32,9 +39,9 @@ docker run \
     -v "/media/yellow/arg2TB-Ray:/home/argsubt/SSD" \
     --user "root:root" \
     --workdir "/home/arg/vr-slam-uwb" \
-    --name vr-slam-uwb \
+    --name "${NAME}" \
     --network host \
     --privileged \
     --security-opt seccomp=unconfined \
-    sunfuchou/vr_slam_uwb:x86 \
+    "${IMG}" \
     bash
